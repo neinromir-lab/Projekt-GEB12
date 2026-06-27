@@ -1,0 +1,445 @@
+---
+title: "Entwicklung und psychometrische Prüfung der GEB-12"
+subtitle: "Eine Kurzform der General Ecological Behavior Scale (GEB-50)"
+author: "Jaromir Gerhardt, Luisa Hautzinger, Theresa Knoch, Jako Spretz"
+date: today
+lang: de
+bibliography: references.bib
+csl: apa.csl
+format:
+  html:
+    toc: true
+    toc-title: "Inhaltsverzeichnis"
+    theme: cosmo
+    code-fold: true
+    code-tools: true
+    number-sections: true
+    df-print: kable
+  pdf:
+    toc: true
+    number-sections: true
+    documentclass: scrartcl
+    geometry:
+      - top=25mm
+      - bottom=25mm
+      - left=25mm
+      - right=25mm
+    fontsize: 10pt
+    code-overflow: wrap
+execute:
+  echo: true
+  warning: false
+  message: false
+  eval: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+#| eval: false
+
+# Pakete laden
+library(tidyverse)   # Datenaufbereitung & Plots
+library(psych)       # KTT: Reliabilität, Itemanalyse (alpha, omega, describe)
+library(lavaan)      # Konfirmatorische Faktorenanalyse (CFA)
+library(mirt)        # Item-Response-Theorie / Rasch-Modell
+
+# Hinweis zu Namespace-Konflikten:
+# psych, lavaan und tidyverse überschreiben sich teils gegenseitig
+# (z. B. alpha, %+%). Im Zweifel explizit qualifizieren:
+# psych::alpha(), psych::describe()
+```
+
+# Einleitung
+
+## Die Langform: GEB-50
+
+Die *General Ecological Behavior Scale* (GEB-50) von @kaiser2020geb misst die
+individuelle Umwelteinstellung über selbstberichtetes ökologisches Verhalten.
+Theoretische Grundlage ist das **Campbell-Paradigma**: Eine Einstellung zeigt
+sich in den Verhaltenskosten, die eine Person bereit ist zu tragen, um ein
+Einstellungsziel zu erreichen. Je kostenintensiver ein Verhalten (z. B. der
+Verzicht auf ein Auto gegenüber dem Trennen von Altglas), desto stärker die
+zugrunde liegende Umwelteinstellung.
+
+Die GEB-50 umfasst 50 Items aus **sechs Handlungsbereichen** – Energiesparen,
+Mobilität, Abfallvermeiden, Konsum, Recycling und gesellschaftliches Engagement.
+Sie wird über ein **eindimensionales Rasch-Modell** ausgewertet, sodass
+Personen- und Itemparameter auf einer gemeinsamen latenten Dimension liegen und
+keine Normierung erforderlich ist [@kaiser2020geb]. Die Vollversion erreicht
+eine Separationsreliabilität von $rel = .71$ bis $.88$ und konvergente Validität
+u. a. über eine Korrelation mit der NEP-Skala von etwa $r = .49$.
+
+## Motivation für eine Kurzform
+
+In vielen Anwendungskontexten – Interventionsstudien, wiederholte Messungen,
+Online-Erhebungen mit knappem Zeitbudget – ist eine 50-Item-Skala unökonomisch.
+Eine validierte **12-Item-Kurzform (GEB-12)** würde die Erhebungsdauer deutlich
+senken und gleichzeitig die zentrale Eigenschaft der Langform – die Messung
+einer einzelnen latenten Umwelteinstellung – erhalten.
+
+Eine Kurzform ist jedoch nicht einfach eine beliebige Item-Teilmenge.
+@smith2000sins warnen ausdrücklich vor „Sünden" der Kurzformentwicklung: Eine
+Kurzform muss eigenständig auf Reliabilität, faktorielle Struktur und
+Konstruktvalidität gegenüber der Langform geprüft werden. Genau dieser Prüfung
+folgt der vorliegende Bericht.
+
+# Methoden
+
+## Konstruktion der Kurzform
+
+Die Itemauswahl folgt einem theoriegeleiteten Verfahren in Anlehnung an
+@smith2000sins und die Konstruktionslogik der Langform [@kaiser2020geb]:
+
+1. **Inhaltsvalidität:** Alle sechs Handlungsbereiche bleiben vertreten – je
+   **ein leichtes** (geringe Verhaltenskosten) und **ein schweres** Item (hohe
+   Verhaltenskosten) pro Bereich. Das ergibt $6 \times 2 = 12$ Items und sichert
+   die inhaltliche Breite des Konstrukts.
+2. **Schwierigkeitsverteilung:** Durch das Paar leicht/schwer wird der gesamte
+   Bereich der Verhaltenskosten abgedeckt; Decken- und Bodeneffekte werden
+   vermieden (Ziel-Schwierigkeiten $P = .20$ bis $.80$).
+3. **Trennschärfe:** Bevorzugt werden Items mit hoher Item-Total-Korrelation
+   ($r_{it} > .40$).
+4. **Rasch-Konformität:** Items sollen die Raschhomogenität der Langform erhalten.
+
+Die resultierende vorläufige Itemauswahl (zwei Items je Bereich) ist in
+@tbl-items dargestellt.
+
+```{r}
+#| label: tbl-items
+#| tbl-cap: "Vorläufige Itemauswahl der GEB-12 (je Bereich ein leichtes und ein schweres Item)"
+#| eval: false
+
+tibble::tribble(
+ ~Bereich,                     ~`Leichtes Item (geringe Kosten)`,                                              ~`Schweres Item (hohe Kosten)`,
+   "(1) Energiesparen",          "Ich warte, bis ich eine volle Wäschetrommel habe, bevor ich wasche. (Hfg.)",    "Ich beziehe Strom aus erneuerbarer Energie. (Ja/Nein)",
+  "(2) Mobilität",              "Für den Arbeits-/Schulweg nutze ich Fahrrad, ÖPNV oder gehe zu Fuß. (Hfg.)",    "Ich verzichte auf ein Auto. (Ja/Nein)",
+  "(3) Abfallvermeiden",        "Wenn ich im Geschäft eine Plastiktüte bekomme, nehme ich sie. (Hfg., neg.)",    "Ich verwende Einkaufstüten oder -taschen mehrfach. (Ja/Nein)",
+  "(4) Konsum",                 "Ich benutze beim Waschen einen Weichspüler. (Hfg., neg.)",                     "Ich kaufe Obst und Gemüse der Jahreszeit entsprechend. (Hfg.)",
+  "(5) Recycling",              "Altglas bringe ich zum Sammelcontainer. (Hfg.)",                               "Leere Batterien werfe ich in den Hausmüll. (Ja/Nein, neg.)",
+  "(6) Ges. Engagement",        "Ich unterhalte mich mit Bekannten über Umweltverschmutzung & Klimawandel. (Hfg.)", "Ich boykottiere Produkte von Firmen, die sich nachweislich umweltschädigend verhalten. (Ja/Nein)"
+)
+```
+
+::: {.callout-note}
+## Antwortformat und Kodierung
+
+Wie in der Langform werden Häufigkeitsantworten **dichotomisiert**: *oft / sehr
+oft* $\rightarrow 1$, *nie / selten / gelegentlich* $\rightarrow 0$
+[@kaiser2020geb]. Negativ formulierte Items werden vor der Analyse umgepolt, ja/nein-Items
+direkt übernommen. Die 12 Items mischen Häufigkeits- und Ja/Nein-Format
+(gemischtes Modell).
+:::
+
+## Abweichung vom ursprünglichen Erhebungsplan: Wegfall der Piloterhebung {#sec-pilot}
+
+Im ursprünglichen Entwurf war eine **Piloterhebung mit $n = 5$** vorgesehen, um
+die Itemkennwerte vorab zu prüfen. Diese Piloterhebung wird im finalen Vorgehen
+**ausgelassen**. Begründung:
+
+- **Keine belastbare Inferenz bei $n = 5$:** Bei fünf Personen sind
+  Trennschärfen, Schwierigkeiten und insbesondere Rasch-Fit-Statistiken
+  extrem instabil. Die Standardfehler sind so groß, dass praktisch jede
+  Itemkennzahl mit dem Nulleffekt vereinbar wäre – es lässt sich **keine
+  statistische Signifikanz** und keine verlässliche Entscheidung über Itemausschluss
+  ableiten.
+- **Risiko von Fehlentscheidungen:** Ein Item aufgrund eines bei $n = 5$
+  zufällig schlechten Kennwerts zu ersetzen, würde die theoriegeleitete,
+  inhaltlich balancierte Auswahl (je Bereich leicht/schwer) gefährden, ohne
+  dass dem ein echter Informationsgewinn gegenübersteht.
+- **Theoriegeleitete Auswahl trägt:** Da die Items bereits aus der
+  rasch-skalierten, validierten Langform stammen und nach inhaltlichen sowie
+  psychometrischen Kriterien [@smith2000sins] ausgewählt wurden, ist eine
+  empirische Vorab-Filterung an einer Mini-Stichprobe verzichtbar.
+
+Stattdessen werden alle psychometrischen Prüfungen direkt an der
+**Haupterhebung** ($n \approx 50$) vorgenommen, die eine – wenn auch moderate –
+Grundlage für die geplanten Analysen bietet.
+
+## Datenakquise
+
+Die Erhebung erfolgt online über **SoSci Survey**. Jede Versuchsperson
+bearbeitet **sowohl die GEB-50 als auch die GEB-12** (within-subject), wobei die
+Reihenfolge bzw. Itempositionen randomisiert werden, um Reihenfolgeeffekte zu
+kontrollieren. Angestrebt wird $n \approx 50$.
+
+```{r}
+#| label: daten-einlesen
+#| eval: false
+
+# Erwartete Datenstruktur: eine Zeile pro Person,
+# Spalten = einzelne Items (bereits dichotomisiert & umgepolt).
+# Anpassen an tatsächlichen SoSci-Export.
+
+daten <- readr::read_csv("data/sosci_export.csv")
+
+# Itemnamen der GEB-12 (Platzhalter – an Erhebung anpassen)
+items_geb12 <- c(
+  "energie_leicht", "energie_schwer",
+  "mobil_leicht",   "mobil_schwer",
+  "abfall_leicht",  "abfall_schwer",
+  "konsum_leicht",  "konsum_schwer",
+  "recycl_leicht",  "recycl_schwer",
+  "engag_leicht",   "engag_schwer"
+)
+
+# Beispiel: Umpolung negativ kodierter Items (1 <-> 0)
+neg_items <- c("abfall_leicht", "konsum_leicht", "recycl_schwer")
+daten <- daten |>
+  mutate(across(all_of(neg_items), ~ 1L - .x))
+
+# Datenrahmen GEB-12 und Summenscore
+geb12 <- daten |> select(all_of(items_geb12))
+geb12_score <- rowSums(geb12, na.rm = TRUE)
+
+# Analoger Score der Langform für die spätere Korrelation
+# geb50 <- daten |> select(starts_with("geb50_"))
+# geb50_score <- rowSums(geb50, na.rm = TRUE)
+```
+
+## Analyseplan
+
+Der Bericht prüft die Kurzform in fünf Schritten, kombiniert dabei klassische
+Testtheorie (KTT), konfirmatorische Faktorenanalyse (CFA) und IRT/Rasch:
+deskriptive Statistik, Reliabilität ($\alpha$, $\omega$), Korrelation zwischen
+Kurz- und Langform, Faktorstruktur (CFA) und Rasch-Fit. Als Zielkriterien
+gelten $\alpha / \omega \geq .70$, $r(\text{GEB-12}, \text{GEB-50}) \geq .85$
+[@smith2000sins] sowie CFI $> .95$ und RMSEA $< .06$ für die CFA.
+
+# Ergebnisse (klassische Testtheorie)
+
+## Deskriptive Statistik
+
+Zunächst werden Item- und Skalenkennwerte für Kurz- und Langform beschrieben.
+
+```{r}
+#| label: tbl-deskriptiv
+#| tbl-cap: "Itemkennwerte der GEB-12 (Schwierigkeit, Trennschärfe)"
+#| eval: false
+
+# Itemstatistiken: P = Itemschwierigkeit (Mittelwert bei 0/1),
+# r.drop = part-whole-korrigierte Trennschärfe
+item_stats <- psych::alpha(geb12)$item.stats
+
+item_stats |>
+  rownames_to_column("Item") |>
+  transmute(
+    Item,
+    Schwierigkeit_P = round(mean, 2),
+    Trennschaerfe_rit = round(r.drop, 2)
+  )
+```
+
+```{r}
+#| label: deskriptiv-score
+#| eval: false
+
+# Verteilung der Summenscores (Kurz- vs. Langform)
+psych::describe(data.frame(GEB12 = geb12_score))
+# psych::describe(data.frame(GEB50 = geb50_score))
+```
+
+Erwartung: Alle Itemschwierigkeiten liegen im Bereich $P = .20$ bis $.80$ und
+alle Trennschärfen über $r_{it} > .40$; andernfalls wäre der betreffende
+Itemkandidat zu diskutieren.
+
+## Reliabilität: Cronbachs Alpha und McDonalds Omega
+
+```{r}
+#| label: reliabilitaet
+#| eval: false
+
+# Cronbachs Alpha (interne Konsistenz)
+rel_alpha <- psych::alpha(geb12)
+rel_alpha$total$raw_alpha          # Punktschätzer Alpha
+
+# McDonalds Omega (modellbasierte Reliabilität)
+rel_omega <- psych::omega(geb12, nfactors = 1, plot = FALSE)
+rel_omega$omega.tot                # Omega total
+
+# Spearman-Brown bei (annähernd) parallelen Hälften
+# (alternativ zur Abschätzung der Effekte der Verkürzung)
+```
+
+::: {.callout-tip}
+## Maßstab
+
+Als Zielwert gilt $\alpha \geq .70$. Da die GEB-12 nur etwa ein Viertel der
+Items der Langform enthält, ist eine **Reduktion** gegenüber der
+Separationsreliabilität der Vollversion ($.71$–$.88$) erwartbar und unkritisch,
+solange $.70$ erreicht wird.
+:::
+
+## Korrelation Kurzform vs. Langform
+
+Das Kernkriterium der Konstruktvalidität nach @smith2000sins ist die
+Übereinstimmung der Personenwerte beider Formen.
+
+```{r}
+#| label: fig-korrelation
+#| fig-cap: "Zusammenhang der Summenscores von GEB-12 und GEB-50"
+#| eval: false
+
+# Korrelation der Summenscores (Pearson)
+# r_kf_lf <- cor(geb12_score, geb50_score, use = "complete.obs")
+# r_kf_lf   # Ziel: >= .85
+
+# Streudiagramm
+# ggplot(daten, aes(x = geb50_score, y = geb12_score)) +
+#   geom_point(alpha = 0.7) +
+#   geom_smooth(method = "lm", se = FALSE) +
+#   labs(x = "GEB-50 Summenscore", y = "GEB-12 Summenscore") +
+#   theme_minimal()
+```
+
+Eine Korrelation von $r \geq .85$ würde belegen, dass die Kurzform die
+Personenordnung der Langform weitgehend reproduziert.
+
+# Ergebnisse (Faktorstruktur und IRT)
+
+## Konfirmatorische Faktorenanalyse
+
+Geprüft wird, ob die GEB-12 weiterhin **eindimensional** misst. Da die Items
+in sechs Handlungsbereiche fallen, vergleichen wir zwei Modelle: ein
+**Generalfaktor-Modell** (eine latente Umwelteinstellung über alle 12 Items)
+und ein **bereichsstrukturiertes Modell** als Vergleich. Bei dichotomen Items
+wird der Schätzer `WLSMV` mit Deklaration der Items als `ordered` verwendet.
+
+```{r}
+#| label: cfa-modelle
+#| eval: false
+
+# Modell 1: Eindimensional (Generalfaktor über alle 12 Items)
+modell_1f <- '
+  Umwelt =~ energie_leicht + energie_schwer +
+            mobil_leicht   + mobil_schwer +
+            abfall_leicht  + abfall_schwer +
+            konsum_leicht  + konsum_schwer +
+            recycl_leicht  + recycl_schwer +
+            engag_leicht   + engag_schwer
+'
+
+# Modell 2: sechs Handlungsbereiche als korrelierte Faktoren
+# (je 2 Items -> Faktoren mit 2 Indikatoren; ggf. Gleichheitsrestriktionen
+#  nötig, da 2-Indikator-Faktoren allein nicht identifiziert sind)
+modell_6f <- '
+  Energie   =~ energie_leicht + energie_schwer
+  Mobilitaet =~ mobil_leicht  + mobil_schwer
+  Abfall    =~ abfall_leicht  + abfall_schwer
+  Konsum    =~ konsum_leicht  + konsum_schwer
+  Recycling =~ recycl_leicht  + recycl_schwer
+  Engagement =~ engag_leicht  + engag_schwer
+'
+
+fit_1f <- lavaan::cfa(modell_1f, data = geb12,
+                      ordered = items_geb12, estimator = "WLSMV")
+fit_6f <- lavaan::cfa(modell_6f, data = geb12,
+                      ordered = items_geb12, estimator = "WLSMV")
+```
+
+```{r}
+#| label: tbl-cfa-fit
+#| tbl-cap: "Globale Fit-Indizes der CFA-Modelle"
+#| eval: false
+
+fit_indices <- function(fit, name) {
+  m <- lavaan::fitMeasures(
+    fit, c("chisq.scaled", "df", "cfi.scaled",
+           "rmsea.scaled", "srmr")
+  )
+  tibble(
+    Modell = name,
+    `Chi^2` = round(m[["chisq.scaled"]], 1),
+    df      = m[["df"]],
+    CFI     = round(m[["cfi.scaled"]], 3),
+    RMSEA   = round(m[["rmsea.scaled"]], 3),
+    SRMR    = round(m[["srmr"]], 3)
+  )
+}
+
+bind_rows(
+  fit_indices(fit_1f, "1 Faktor (Generalfaktor)"),
+  fit_indices(fit_6f, "6 Handlungsbereiche")
+)
+```
+
+::: {.callout-note}
+## Erwartung und Stichprobenvorbehalt
+
+In Anlehnung an die Eindimensionalität der GEB-50 [@kaiser2020geb] wird erwartet,
+dass das Generalfaktor-Modell die Daten ausreichend gut abbildet
+(CFI $> .95$, RMSEA $< .06$). Bei $n \approx 50$ und 12 dichotomen Items ist die
+CFA jedoch **schwach gepowert**; die Fit-Indizes sind mit Vorsicht zu
+interpretieren und werden gemeinsam mit den IRT-Ergebnissen bewertet.
+:::
+
+## Rasch-Modell (IRT)
+
+Da die Langform rasch-skaliert ist, wird geprüft, ob die 12 Items das
+**dichotome Rasch-Modell** erfüllen.
+
+```{r}
+#| label: rasch-modell
+#| eval: false
+
+# Dichotomes Rasch-Modell: alle Itemdiskriminationen auf 1 fixiert
+rasch_fit <- mirt::mirt(geb12, model = 1, itemtype = "Rasch")
+
+# Itemparameter (b = Schwierigkeit / Lokation)
+coef(rasch_fit, IRTpars = TRUE, simplify = TRUE)$items
+
+# Item-Fit (S-X2): nicht signifikante Werte sprechen für Modellpassung
+mirt::itemfit(rasch_fit)
+
+# Test Information Function: wo misst die Kurzform am präzisesten?
+# plot(rasch_fit, type = "info")
+```
+
+```{r}
+#| label: fig-tif
+#| fig-cap: "Testinformationsfunktion der GEB-12"
+#| eval: false
+
+# plot(rasch_fit, type = "info",
+#      main = "Testinformationsfunktion GEB-12")
+```
+
+Erwartet werden nicht signifikante Item-Fit-Statistiken (gute Rasch-Passung)
+sowie eine Testinformationsfunktion, die über einen breiten Bereich der latenten
+Umwelteinstellung informativ ist – als Folge der bewussten Mischung leichter und
+schwerer Items.
+
+# Diskussion
+
+## Ist die GEB-12 eine gute Kurzform?
+
+Die Bewertung folgt den Zielkriterien aus dem Analyseplan. Eine **gelungene**
+Kurzform läge vor, wenn:
+
+- die interne Konsistenz $\alpha / \omega \geq .70$ erreicht,
+- die Korrelation mit der Langform $r \geq .85$ beträgt [@smith2000sins],
+- das eindimensionale CFA-Modell akzeptabel passt (CFI $> .95$, RMSEA $< .06$) und
+- die Items das Rasch-Modell erfüllen.
+
+Werden diese Kriterien erfüllt, bildet die GEB-12 die Umwelteinstellung
+**reliabel und valide** ab und lässt sich ökonomisch in Kurzerhebungen
+einsetzen. Verfehlt die Kurzform einzelne Kriterien – etwa eine zu niedrige
+Reliabilität als unvermeidliche Folge der starken Itemreduktion oder einen
+schwachen CFA-Fit aufgrund der kleinen Stichprobe –, wären gezielte
+Itemrevisionen oder eine größere Folgeerhebung die nächsten Schritte.
+
+## Einschränkungen
+
+Die wichtigste Einschränkung ist der **Stichprobenumfang** ($n \approx 50$).
+Er erlaubt orientierende KTT-Kennwerte, ist für CFA und IRT mit 12 dichotomen
+Items aber klein; die Fit- und Itemparameter sind entsprechend unsicher. Genau
+aus diesem Grund wurde auch die ursprünglich geplante Piloterhebung mit $n = 5$
+ausgelassen (siehe @sec-pilot): Eine noch kleinere Stichprobe hätte keine
+belastbare Itemselektion ermöglicht. Die Ergebnisse sind daher als
+**Machbarkeitsnachweis** der theoriegeleiteten Kurzform zu verstehen, nicht als
+abschließende Validierung.
+
+# Literatur
+
+::: {#refs}
+:::

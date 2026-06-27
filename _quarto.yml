@@ -1,0 +1,10 @@
+project:
+  type: website
+
+website:
+  title: "GEB-12: Entwicklung und psychometrische Prüfung"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
