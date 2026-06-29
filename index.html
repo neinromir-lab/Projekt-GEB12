@@ -225,7 +225,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">27. Juni 2026</p>
+      <p class="date">29. Juni 2026</p>
     </div>
   </div>
   
@@ -306,13 +306,13 @@ Tabelle&nbsp;1: Vorläufige Itemauswahl der GEB-12 (je Bereich ein leichtes und 
 <li><strong>Risiko von Fehlentscheidungen:</strong> Ein Item aufgrund eines bei <span class="math inline">\(N = 6\)</span> zufällig schlechten Kennwerts zu ersetzen, würde die theoriegeleitete, inhaltlich balancierte Auswahl (je Bereich ein leichtes und ein schweres Item) gefährden, ohne dass dem ein echter Informationsgewinn gegenübersteht.</li>
 <li><strong>Theoriegeleitete Auswahl trägt:</strong> Da die Items bereits aus der rasch-skalierten, validierten Langform stammen und nach inhaltlichen sowie psychometrischen Kriterien <span class="citation" data-cites="smith2000sins">(<a href="#ref-smith2000sins" role="doc-biblioref">Smith et al., 2000</a>)</span> ausgewählt wurden, ist eine empirische Vorab-Filterung an einer Mini-Stichprobe nicht erforderlich.</li>
 </ul>
-<p>Die Pretest-Ergebnisse dienten daher <strong>nur</strong> der Sicherstellung von Verständlichkeit und Durchführbarkeit. Alle berichteten psychometrischen Prüfungen beruhen ausschließlich auf der <strong>Haupterhebung</strong> (<span class="math inline">\(N \approx 50\)</span>).</p>
+<p>Die Pretest-Ergebnisse dienten daher <strong>nur</strong> der Sicherstellung von Verständlichkeit und Durchführbarkeit. Alle berichteten psychometrischen Prüfungen beruhen ausschließlich auf der <strong>Haupterhebung</strong> (<span class="math inline">\(N = 60\)</span>).</p>
 </section>
 <section id="datenerhebung" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="datenerhebung"><span class="header-section-number">2.3</span> Datenerhebung</h2>
 <p>Die Datenerhebung erfolgte über die für wissenschaftliche Zwecke frei verfügbare Online-Befragungsplattform <strong>SoSci Survey</strong>. Für die Originalversion (GEB-50) und die entwickelte Kurzform wurden <strong>zwei separate Fragebögen</strong> erstellt, die über einen individuellen Prüfcode miteinander verknüpft werden konnten, sodass die Antworten jeder Person beiden Instrumenten zugeordnet werden können.</p>
 <p>Das <strong>GEB-50</strong> umfasst 50 Items aus sechs Verhaltensdimensionen und besteht aus zwei Teilen: einem ersten Teil mit Antworten auf einer <strong>sechsstufigen Likert-Skala</strong> und einem zweiten Teil mit <strong>dichotomen Items</strong> (Antwortformat „Ja”/„Nein”). Die entwickelte <strong>Kurzform (GEB-12)</strong> umfasst zwölf dichotome Items („Ja”/„Nein”); aus jeder der sechs Dimensionen wurden zwei Items ausgewählt.</p>
-<p>Die Datenerhebung erfolgte im Zeitraum vom xx.xx.xxxx bis xx.xx.xxxx. Die Stichprobe setzte sich aus Mitstudierenden sowie Personen aus dem privaten Umfeld der Autor:innen zusammen und stellt somit eine <strong>Gelegenheitsstichprobe</strong> dar. Angestrebt wurde eine Stichprobengröße von mindestens <span class="math inline">\(N = 50\)</span>, um grundlegende statistische Analysen durchführen und Verzerrungen durch eine zu geringe Fallzahl reduzieren zu können.</p>
+<p>Die Datenerhebung erfolgte im Zeitraum vom 01.06. bis 28.06.2026. Die Stichprobe setzte sich aus Mitstudierenden sowie Personen aus dem privaten Umfeld der Autor:innen zusammen und stellt somit eine <strong>Gelegenheitsstichprobe</strong> dar. Angestrebt wurde eine Stichprobengröße von mindestens <span class="math inline">\(N = 50\)</span>; nach Ausschluss von Test- und Abbruchfällen umfasst die finale Auswertungsstichprobe <strong><span class="math inline">\(N = 60\)</span></strong> Personen (Kurz- und Langform jeweils 60). Damit lassen sich grundlegende statistische Analysen durchführen und Verzerrungen durch eine zu geringe Fallzahl reduzieren.</p>
 <p>Die Auswahl der zwölf Items für die Kurzform erfolgte auf Grundlage der Rasch-Theorie bzw. itemanalytischer Kennwerte aus der Item-Response-Theorie (vgl. <a href="#sec-pretest" class="quarto-xref">Kapitel&nbsp;2.2</a> sowie die Konstruktionskriterien oben). Der vorgeschaltete Pretest (<span class="math inline">\(N = 6\)</span>) diente ausschließlich der Prüfung von Verständlichkeit und Durchführbarkeit (siehe <a href="#sec-pretest" class="quarto-xref">Kapitel&nbsp;2.2</a>).</p>
 <div class="cell">
 <details class="code-fold">
@@ -323,12 +323,12 @@ Tabelle&nbsp;1: Vorläufige Itemauswahl der GEB-12 (je Bereich ein leichtes und 
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>Data_L_raw <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data_L.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>,</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">fileEncoding =</span> <span class="st">"UCS-2LE"</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ausschluss von Test-/Abbruchfällen (CASE-IDs)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ausschluss von Test-/Abbruchfällen (CASE-IDs) -&gt; je N = 60</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Data_S_raw <span class="ot">&lt;-</span> Data_S_raw[<span class="sc">!</span>Data_S_raw<span class="sc">$</span>CASE <span class="sc">%in%</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">c</span>(<span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">42</span>, <span class="dv">94</span>), ]</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">c</span>(<span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">42</span>, <span class="dv">94</span>, <span class="dv">111</span>), ]</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>Data_L_raw <span class="ot">&lt;-</span> Data_L_raw[<span class="sc">!</span>Data_L_raw<span class="sc">$</span>CASE <span class="sc">%in%</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">c</span>(<span class="dv">130</span>, <span class="dv">153</span>, <span class="dv">155</span>, <span class="dv">156</span>, <span class="dv">159</span>, <span class="dv">164</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">173</span>, <span class="dv">175</span>, <span class="dv">182</span>, <span class="dv">196</span>), ]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">c</span>(<span class="dv">130</span>, <span class="dv">153</span>, <span class="dv">155</span>, <span class="dv">156</span>, <span class="dv">159</span>, <span class="dv">164</span>, <span class="dv">173</span>, <span class="dv">175</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">182</span>, <span class="dv">196</span>, <span class="dv">215</span>, <span class="dv">224</span>, <span class="dv">237</span>), ]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell">
@@ -549,7 +549,7 @@ Tabelle&nbsp;3: Globale Fit-Indizes des CFA-Modells
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Das Sechs-Faktoren-Modell hat Faktoren mit je nur <strong>zwei Indikatoren</strong>; solche Faktoren sind einzeln nicht identifiziert und nur über die Faktorkovarianzen schätzbar. In Kombination mit <span class="math inline">\(N \approx 50\)</span> und 12 dichotomen Items ist die CFA <strong>schwach gepowert</strong>: Schätzungen können Warnungen erzeugen, und die Fit-Indizes (CFI <span class="math inline">\(&gt; .95\)</span>, RMSEA <span class="math inline">\(&lt; .06\)</span> als Zielwerte) sind mit Vorsicht zu interpretieren. Sie werden daher gemeinsam mit den Reliabilitäts- und Rasch-Ergebnissen bewertet.</p>
+<p>Das Sechs-Faktoren-Modell hat Faktoren mit je nur <strong>zwei Indikatoren</strong>; solche Faktoren sind einzeln nicht identifiziert und nur über die Faktorkovarianzen schätzbar. In Kombination mit <span class="math inline">\(N = 60\)</span> und 12 dichotomen Items ist die CFA <strong>schwach gepowert</strong>: Schätzungen können Warnungen erzeugen, und die Fit-Indizes (CFI <span class="math inline">\(&gt; .95\)</span>, RMSEA <span class="math inline">\(&lt; .06\)</span> als Zielwerte) sind mit Vorsicht zu interpretieren. Sie werden daher gemeinsam mit den Reliabilitäts- und Rasch-Ergebnissen bewertet.</p>
 </div>
 </div>
 </section>
@@ -614,7 +614,7 @@ Tabelle&nbsp;3: Globale Fit-Indizes des CFA-Modells
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Bei <span class="math inline">\(N \approx 50\)</span> und 12 Items sind die CML-Schätzungen mit breiten Konfidenzintervallen behaftet. Für robustere Aussagen lassen sich nichtparametrische Tests heranziehen (<code>eRm::NPtest()</code>), die ohne asymptotische Annahmen auskommen.</p>
+<p>Bei <span class="math inline">\(N = 60\)</span> und 12 Items sind die CML-Schätzungen mit breiten Konfidenzintervallen behaftet. Zudem mussten <strong>zwei Personen mit perfektem Score</strong> (alle 12 Items bejaht) vor der Schätzung entfernt werden, da extreme Rohwerte keine endlichen Personenparameter liefern; das Rasch-Modell beruht damit auf 58 Personen. Für robustere Aussagen lassen sich nichtparametrische Tests heranziehen (<code>eRm::NPtest()</code>), die ohne asymptotische Annahmen auskommen.</p>
 </div>
 </div>
 </section>
@@ -634,7 +634,7 @@ Tabelle&nbsp;3: Globale Fit-Indizes des CFA-Modells
 </section>
 <section id="einschränkungen" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="einschränkungen"><span class="header-section-number">5.2</span> Einschränkungen</h2>
-<p>Die wichtigste Einschränkung ist der <strong>Stichprobenumfang</strong> (<span class="math inline">\(N \approx 50\)</span>). Er erlaubt orientierende KTT-Kennwerte, ist für CFA und IRT mit 12 dichotomen Items aber klein; die Fit- und Itemparameter sind entsprechend unsicher. Aus demselben Grund konnte der vorgeschaltete Pretest mit <span class="math inline">\(N = 6\)</span> nur die Verständlichkeit und Durchführbarkeit absichern und keine belastbare Itemselektion leisten (siehe <a href="#sec-pretest" class="quarto-xref">Kapitel&nbsp;2.2</a>). Die Ergebnisse sind daher als <strong>Machbarkeitsnachweis</strong> der theoriegeleiteten Kurzform zu verstehen, nicht als abschließende Validierung.</p>
+<p>Die wichtigste Einschränkung ist der <strong>Stichprobenumfang</strong> (<span class="math inline">\(N = 60\)</span>). Er erlaubt orientierende KTT-Kennwerte, ist für CFA und IRT mit 12 dichotomen Items aber klein; die Fit- und Itemparameter sind entsprechend unsicher. Aus demselben Grund konnte der vorgeschaltete Pretest mit <span class="math inline">\(N = 6\)</span> nur die Verständlichkeit und Durchführbarkeit absichern und keine belastbare Itemselektion leisten (siehe <a href="#sec-pretest" class="quarto-xref">Kapitel&nbsp;2.2</a>). Die Ergebnisse sind daher als <strong>Machbarkeitsnachweis</strong> der theoriegeleiteten Kurzform zu verstehen, nicht als abschließende Validierung.</p>
 </section>
 </section>
 <section id="literatur" class="level1" data-number="6">
@@ -778,7 +778,7 @@ Smith, G. T., McCarthy, D. M., &amp; Anderson, K. G. (2000). On the sins of shor
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/neinromir-lab\.github\.io\/Projekt-GEB12\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1269,7 +1269,7 @@ Smith, G. T., McCarthy, D. M., &amp; Anderson, K. G. (2000). On the sins of shor
 <span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-167"><a href="#cb12-167" aria-hidden="true" tabindex="-1"></a>Die Pretest-Ergebnisse dienten daher **nur** der Sicherstellung von</span>
 <span id="cb12-168"><a href="#cb12-168" aria-hidden="true" tabindex="-1"></a>Verständlichkeit und Durchführbarkeit. Alle berichteten psychometrischen</span>
-<span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a>Prüfungen beruhen ausschließlich auf der **Haupterhebung** ($N \approx 50$).</span>
+<span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a>Prüfungen beruhen ausschließlich auf der **Haupterhebung** ($N = 60$).</span>
 <span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a><span class="fu">## Datenerhebung</span></span>
 <span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a></span>
@@ -1287,372 +1287,376 @@ Smith, G. T., McCarthy, D. M., &amp; Anderson, K. G. (2000). On the sins of shor
 <span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a>Items („Ja"/„Nein"); aus jeder der sechs Dimensionen wurden zwei Items</span>
 <span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a>ausgewählt.</span>
 <span id="cb12-186"><a href="#cb12-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a>Die Datenerhebung erfolgte im Zeitraum vom xx.xx.xxxx bis xx.xx.xxxx. Die</span>
+<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a>Die Datenerhebung erfolgte im Zeitraum vom 01.06. bis 28.06.2026. Die</span>
 <span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a>Stichprobe setzte sich aus Mitstudierenden sowie Personen aus dem privaten</span>
 <span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a>Umfeld der Autor:innen zusammen und stellt somit eine **Gelegenheitsstichprobe**</span>
-<span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a>dar. Angestrebt wurde eine Stichprobengröße von mindestens $N = 50$, um</span>
-<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a>grundlegende statistische Analysen durchführen und Verzerrungen durch eine zu</span>
-<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a>geringe Fallzahl reduzieren zu können.</span>
-<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a>Die Auswahl der zwölf Items für die Kurzform erfolgte auf Grundlage der</span>
-<span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a>Rasch-Theorie bzw. itemanalytischer Kennwerte aus der Item-Response-Theorie</span>
-<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a>(vgl. @sec-pretest sowie die Konstruktionskriterien oben). Der vorgeschaltete</span>
-<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a>Pretest ($N = 6$) diente ausschließlich der Prüfung von Verständlichkeit und</span>
-<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a>Durchführbarkeit (siehe @sec-pretest).</span>
-<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: daten-einlesen</span></span>
-<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a><span class="co"># Rohdaten einlesen (SoSci-Export, UCS-2LE / Semikolon-getrennt)</span></span>
-<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a>Data_S_raw <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data_S.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>,</span>
-<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a>                       <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">fileEncoding =</span> <span class="st">"UCS-2LE"</span>)</span>
-<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a>Data_L_raw <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data_L.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>,</span>
+<span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a>dar. Angestrebt wurde eine Stichprobengröße von mindestens $N = 50$; nach</span>
+<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a>Ausschluss von Test- und Abbruchfällen umfasst die finale Auswertungsstichprobe</span>
+<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a>**$N = 60$** Personen (Kurz- und Langform jeweils 60). Damit lassen sich</span>
+<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a>grundlegende statistische Analysen durchführen und Verzerrungen durch eine zu</span>
+<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a>geringe Fallzahl reduzieren.</span>
+<span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a>Die Auswahl der zwölf Items für die Kurzform erfolgte auf Grundlage der</span>
+<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a>Rasch-Theorie bzw. itemanalytischer Kennwerte aus der Item-Response-Theorie</span>
+<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a>(vgl. @sec-pretest sowie die Konstruktionskriterien oben). Der vorgeschaltete</span>
+<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a>Pretest ($N = 6$) diente ausschließlich der Prüfung von Verständlichkeit und</span>
+<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a>Durchführbarkeit (siehe @sec-pretest).</span>
+<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: daten-einlesen</span></span>
+<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a><span class="co"># Rohdaten einlesen (SoSci-Export, UCS-2LE / Semikolon-getrennt)</span></span>
+<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a>Data_S_raw <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data_S.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>,</span>
 <span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a>                       <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">fileEncoding =</span> <span class="st">"UCS-2LE"</span>)</span>
-<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a><span class="co"># Ausschluss von Test-/Abbruchfällen (CASE-IDs)</span></span>
-<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a>Data_S_raw <span class="ot">&lt;-</span> Data_S_raw[<span class="sc">!</span>Data_S_raw<span class="sc">$</span>CASE <span class="sc">%in%</span></span>
-<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">c</span>(<span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">42</span>, <span class="dv">94</span>), ]</span>
-<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a>Data_L_raw <span class="ot">&lt;-</span> Data_L_raw[<span class="sc">!</span>Data_L_raw<span class="sc">$</span>CASE <span class="sc">%in%</span></span>
-<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">c</span>(<span class="dv">130</span>, <span class="dv">153</span>, <span class="dv">155</span>, <span class="dv">156</span>, <span class="dv">159</span>, <span class="dv">164</span>,</span>
-<span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">173</span>, <span class="dv">175</span>, <span class="dv">182</span>, <span class="dv">196</span>), ]</span>
-<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-219"><a href="#cb12-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-223"><a href="#cb12-223" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: daten-aufbereiten</span></span>
-<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a><span class="do">## Kurzform (GEB-12): 12 dichotome Items KG01_01 ... KG01_12</span></span>
-<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a>Data_S <span class="ot">&lt;-</span> Data_S_raw <span class="sc">|&gt;</span></span>
-<span id="cb12-228"><a href="#cb12-228" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(KG01_01<span class="sc">:</span>KG01_12)</span>
-<span id="cb12-229"><a href="#cb12-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a><span class="co"># Recode: -1 (fehlend) &amp; 2 ("Nein") -&gt; 0, 1 ("Ja") -&gt; 1</span></span>
-<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a>Data_S <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_S, car<span class="sc">::</span>recode, <span class="st">"-1=0; 2=0; 1=1"</span>))</span>
-<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a><span class="co"># Umpolung des negativ kodierten Items (Spalte 10 = KG01_10)</span></span>
-<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a>Data_S[<span class="dv">10</span>] <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_S[<span class="dv">10</span>], car<span class="sc">::</span>recode, <span class="st">"0=1; 1=0"</span>))</span>
-<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a><span class="do">## Langform (GEB-50): Teil 1 polytom (1-5), Teil 2 dichotom (Ja/Nein)</span></span>
-<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a>Data_L <span class="ot">&lt;-</span> varhandle<span class="sc">::</span><span class="fu">unfactor</span>(Data_L_raw[<span class="dv">7</span><span class="sc">:</span><span class="dv">56</span>])</span>
-<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a><span class="co"># Dichotome Items: negativ kodierte umpolen, dann 1/0 recodieren</span></span>
-<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a>Data_L[<span class="fu">c</span>(<span class="dv">34</span>, <span class="dv">35</span>, <span class="dv">36</span>, <span class="dv">37</span>, <span class="dv">38</span>, <span class="dv">40</span>)] <span class="ot">&lt;-</span></span>
-<span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_L[<span class="fu">c</span>(<span class="dv">34</span>, <span class="dv">35</span>, <span class="dv">36</span>, <span class="dv">37</span>, <span class="dv">38</span>, <span class="dv">40</span>)],</span>
-<span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a>                       car<span class="sc">::</span>recode, <span class="st">"1=2; 2=1"</span>))</span>
-<span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a>Data_L[<span class="dv">33</span><span class="sc">:</span><span class="dv">50</span>] <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_L[<span class="dv">33</span><span class="sc">:</span><span class="dv">50</span>],</span>
-<span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a>                                      car<span class="sc">::</span>recode, <span class="st">"1=1; 2=0"</span>))</span>
-<span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a><span class="co"># Polytome Items: negativ kodierte umpolen, dann dichotomisieren (&gt;=4 -&gt; 1)</span></span>
-<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a>Data_L[<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">23</span>, <span class="dv">26</span>, <span class="dv">27</span>, <span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">31</span>)] <span class="ot">&lt;-</span></span>
-<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_L[<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">23</span>, <span class="dv">26</span>, <span class="dv">27</span>, <span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">31</span>)],</span>
-<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a>                       car<span class="sc">::</span>recode, <span class="st">"1=5; 2=4; 3=3; 4=2; 5=1"</span>))</span>
-<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a>Data_L[<span class="dv">1</span><span class="sc">:</span><span class="dv">32</span>] <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_L[<span class="dv">1</span><span class="sc">:</span><span class="dv">32</span>],</span>
-<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a>                                     car<span class="sc">::</span>recode, <span class="st">"1=0; 2=0; 3=0; 4=1; 5=1"</span>))</span>
-<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a><span class="co"># Alle Spalten numerisch</span></span>
-<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a>Data_L[] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(Data_L, <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(x)))</span>
-<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-257"><a href="#cb12-257" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analyseplan</span></span>
+<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a>Data_L_raw <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Data_L.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>,</span>
+<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a>                       <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">fileEncoding =</span> <span class="st">"UCS-2LE"</span>)</span>
+<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a><span class="co"># Ausschluss von Test-/Abbruchfällen (CASE-IDs) -&gt; je N = 60</span></span>
+<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a>Data_S_raw <span class="ot">&lt;-</span> Data_S_raw[<span class="sc">!</span>Data_S_raw<span class="sc">$</span>CASE <span class="sc">%in%</span></span>
+<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">c</span>(<span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">42</span>, <span class="dv">94</span>, <span class="dv">111</span>), ]</span>
+<span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a>Data_L_raw <span class="ot">&lt;-</span> Data_L_raw[<span class="sc">!</span>Data_L_raw<span class="sc">$</span>CASE <span class="sc">%in%</span></span>
+<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">c</span>(<span class="dv">130</span>, <span class="dv">153</span>, <span class="dv">155</span>, <span class="dv">156</span>, <span class="dv">159</span>, <span class="dv">164</span>, <span class="dv">173</span>, <span class="dv">175</span>,</span>
+<span id="cb12-219"><a href="#cb12-219" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">182</span>, <span class="dv">196</span>, <span class="dv">215</span>, <span class="dv">224</span>, <span class="dv">237</span>), ]</span>
+<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: daten-aufbereiten</span></span>
+<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-228"><a href="#cb12-228" aria-hidden="true" tabindex="-1"></a><span class="do">## Kurzform (GEB-12): 12 dichotome Items KG01_01 ... KG01_12</span></span>
+<span id="cb12-229"><a href="#cb12-229" aria-hidden="true" tabindex="-1"></a>Data_S <span class="ot">&lt;-</span> Data_S_raw <span class="sc">|&gt;</span></span>
+<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(KG01_01<span class="sc">:</span>KG01_12)</span>
+<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a><span class="co"># Recode: -1 (fehlend) &amp; 2 ("Nein") -&gt; 0, 1 ("Ja") -&gt; 1</span></span>
+<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a>Data_S <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_S, car<span class="sc">::</span>recode, <span class="st">"-1=0; 2=0; 1=1"</span>))</span>
+<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a><span class="co"># Umpolung des negativ kodierten Items (Spalte 10 = KG01_10)</span></span>
+<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a>Data_S[<span class="dv">10</span>] <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_S[<span class="dv">10</span>], car<span class="sc">::</span>recode, <span class="st">"0=1; 1=0"</span>))</span>
+<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a><span class="do">## Langform (GEB-50): Teil 1 polytom (1-5), Teil 2 dichotom (Ja/Nein)</span></span>
+<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a>Data_L <span class="ot">&lt;-</span> varhandle<span class="sc">::</span><span class="fu">unfactor</span>(Data_L_raw[<span class="dv">7</span><span class="sc">:</span><span class="dv">56</span>])</span>
+<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a><span class="co"># Dichotome Items: negativ kodierte umpolen, dann 1/0 recodieren</span></span>
+<span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a>Data_L[<span class="fu">c</span>(<span class="dv">34</span>, <span class="dv">35</span>, <span class="dv">36</span>, <span class="dv">37</span>, <span class="dv">38</span>, <span class="dv">40</span>)] <span class="ot">&lt;-</span></span>
+<span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_L[<span class="fu">c</span>(<span class="dv">34</span>, <span class="dv">35</span>, <span class="dv">36</span>, <span class="dv">37</span>, <span class="dv">38</span>, <span class="dv">40</span>)],</span>
+<span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a>                       car<span class="sc">::</span>recode, <span class="st">"1=2; 2=1"</span>))</span>
+<span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a>Data_L[<span class="dv">33</span><span class="sc">:</span><span class="dv">50</span>] <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_L[<span class="dv">33</span><span class="sc">:</span><span class="dv">50</span>],</span>
+<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a>                                      car<span class="sc">::</span>recode, <span class="st">"1=1; 2=0"</span>))</span>
+<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a><span class="co"># Polytome Items: negativ kodierte umpolen, dann dichotomisieren (&gt;=4 -&gt; 1)</span></span>
+<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a>Data_L[<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">23</span>, <span class="dv">26</span>, <span class="dv">27</span>, <span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">31</span>)] <span class="ot">&lt;-</span></span>
+<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_L[<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">23</span>, <span class="dv">26</span>, <span class="dv">27</span>, <span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">31</span>)],</span>
+<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a>                       car<span class="sc">::</span>recode, <span class="st">"1=5; 2=4; 3=3; 4=2; 5=1"</span>))</span>
+<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a>Data_L[<span class="dv">1</span><span class="sc">:</span><span class="dv">32</span>] <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sapply</span>(Data_L[<span class="dv">1</span><span class="sc">:</span><span class="dv">32</span>],</span>
+<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a>                                     car<span class="sc">::</span>recode, <span class="st">"1=0; 2=0; 3=0; 4=1; 5=1"</span>))</span>
+<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a><span class="co"># Alle Spalten numerisch</span></span>
+<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a>Data_L[] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(Data_L, <span class="cf">function</span>(x) <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(x)))</span>
+<span id="cb12-257"><a href="#cb12-257" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-258"><a href="#cb12-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a>Der Bericht prüft die Kurzform parallel zur Langform mit Verfahren der</span>
-<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a>klassischen Testtheorie (KTT) und der Item-Response-Theorie (IRT). Im Einzelnen:</span>
-<span id="cb12-261"><a href="#cb12-261" aria-hidden="true" tabindex="-1"></a>deskriptive Statistik (Mittelwert, SD, Median der Personenscores), drei</span>
-<span id="cb12-262"><a href="#cb12-262" aria-hidden="true" tabindex="-1"></a>Reliabilitätsschätzer – **Cronbachs $\alpha$**, **McDonalds $\omega$** (über die</span>
-<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a>sechs Handlungsbereiche) und **Split-Half-Reliabilität** –, die **Spearman-</span>
-<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a>Korrelation** der Summenscores von Kurz- und Langform, eine **konfirmatorische</span>
-<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a>Faktorenanalyse** des Sechs-Bereiche-Modells (WLSMV-Schätzer für dichotome</span>
-<span id="cb12-266"><a href="#cb12-266" aria-hidden="true" tabindex="-1"></a>Items) sowie ein **dichotomes Rasch-Modell** (<span class="in">`eRm`</span>) mit Personenparametern,</span>
-<span id="cb12-267"><a href="#cb12-267" aria-hidden="true" tabindex="-1"></a>Item-Fit und Separationsreliabilität. Als Zielkriterien gelten</span>
-<span id="cb12-268"><a href="#cb12-268" aria-hidden="true" tabindex="-1"></a>$\alpha / \omega \geq .70$, eine hohe Korrelation der Summenscores</span>
-<span id="cb12-269"><a href="#cb12-269" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@smith2000sins</span><span class="co">]</span> sowie akzeptable CFA-Fitwerte (CFI $&gt; .95$, RMSEA $&lt; .06$).</span>
-<span id="cb12-270"><a href="#cb12-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-271"><a href="#cb12-271" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ergebnisse (klassische Testtheorie)</span></span>
+<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analyseplan</span></span>
+<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-261"><a href="#cb12-261" aria-hidden="true" tabindex="-1"></a>Der Bericht prüft die Kurzform parallel zur Langform mit Verfahren der</span>
+<span id="cb12-262"><a href="#cb12-262" aria-hidden="true" tabindex="-1"></a>klassischen Testtheorie (KTT) und der Item-Response-Theorie (IRT). Im Einzelnen:</span>
+<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a>deskriptive Statistik (Mittelwert, SD, Median der Personenscores), drei</span>
+<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a>Reliabilitätsschätzer – **Cronbachs $\alpha$**, **McDonalds $\omega$** (über die</span>
+<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a>sechs Handlungsbereiche) und **Split-Half-Reliabilität** –, die **Spearman-</span>
+<span id="cb12-266"><a href="#cb12-266" aria-hidden="true" tabindex="-1"></a>Korrelation** der Summenscores von Kurz- und Langform, eine **konfirmatorische</span>
+<span id="cb12-267"><a href="#cb12-267" aria-hidden="true" tabindex="-1"></a>Faktorenanalyse** des Sechs-Bereiche-Modells (WLSMV-Schätzer für dichotome</span>
+<span id="cb12-268"><a href="#cb12-268" aria-hidden="true" tabindex="-1"></a>Items) sowie ein **dichotomes Rasch-Modell** (<span class="in">`eRm`</span>) mit Personenparametern,</span>
+<span id="cb12-269"><a href="#cb12-269" aria-hidden="true" tabindex="-1"></a>Item-Fit und Separationsreliabilität. Als Zielkriterien gelten</span>
+<span id="cb12-270"><a href="#cb12-270" aria-hidden="true" tabindex="-1"></a>$\alpha / \omega \geq .70$, eine hohe Korrelation der Summenscores</span>
+<span id="cb12-271"><a href="#cb12-271" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">@smith2000sins</span><span class="co">]</span> sowie akzeptable CFA-Fitwerte (CFI $&gt; .95$, RMSEA $&lt; .06$).</span>
 <span id="cb12-272"><a href="#cb12-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-273"><a href="#cb12-273" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deskriptive Statistik</span></span>
+<span id="cb12-273"><a href="#cb12-273" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ergebnisse (klassische Testtheorie)</span></span>
 <span id="cb12-274"><a href="#cb12-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-275"><a href="#cb12-275" aria-hidden="true" tabindex="-1"></a>Zunächst werden Item- und Skalenkennwerte für Kurz- und Langform beschrieben.</span>
+<span id="cb12-275"><a href="#cb12-275" aria-hidden="true" tabindex="-1"></a><span class="fu">## Deskriptive Statistik</span></span>
 <span id="cb12-276"><a href="#cb12-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-279"><a href="#cb12-279" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-280"><a href="#cb12-280" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-deskriptiv</span></span>
-<span id="cb12-281"><a href="#cb12-281" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Itemkennwerte der GEB-12 (Schwierigkeit, Trennschärfe)"</span></span>
-<span id="cb12-282"><a href="#cb12-282" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-283"><a href="#cb12-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-284"><a href="#cb12-284" aria-hidden="true" tabindex="-1"></a><span class="co"># Itemstatistiken: mean = Itemschwierigkeit P (Mittelwert bei 0/1),</span></span>
-<span id="cb12-285"><a href="#cb12-285" aria-hidden="true" tabindex="-1"></a><span class="co"># r.drop = part-whole-korrigierte Trennschaerfe (Item NICHT im Score -&gt;</span></span>
-<span id="cb12-286"><a href="#cb12-286" aria-hidden="true" tabindex="-1"></a><span class="co">#          vermeidet kuenstlich ueberhoehte Werte bei Item-Overlap)</span></span>
-<span id="cb12-287"><a href="#cb12-287" aria-hidden="true" tabindex="-1"></a>item_stats <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>(Data_S, <span class="at">check.keys =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>item.stats</span>
-<span id="cb12-288"><a href="#cb12-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-289"><a href="#cb12-289" aria-hidden="true" tabindex="-1"></a><span class="co"># Ampel-Flags (Textform, render-sicher in HTML und PDF):</span></span>
-<span id="cb12-290"><a href="#cb12-290" aria-hidden="true" tabindex="-1"></a><span class="co">#   Trennschaerfe r.drop &lt; .30 -&gt; "kritisch", &lt; .40 -&gt; "grenzwertig"</span></span>
-<span id="cb12-291"><a href="#cb12-291" aria-hidden="true" tabindex="-1"></a><span class="co">#   Schwierigkeit P ausserhalb .20-.80 -&gt; Decken-/Bodeneffekt</span></span>
-<span id="cb12-292"><a href="#cb12-292" aria-hidden="true" tabindex="-1"></a>flag_rit <span class="ot">&lt;-</span> <span class="cf">function</span>(r) dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
-<span id="cb12-293"><a href="#cb12-293" aria-hidden="true" tabindex="-1"></a>  r <span class="sc">&lt;</span> .<span class="dv">30</span>           <span class="sc">~</span> <span class="st">"kritisch"</span>,</span>
-<span id="cb12-294"><a href="#cb12-294" aria-hidden="true" tabindex="-1"></a>  r <span class="sc">&lt;</span> .<span class="dv">40</span>           <span class="sc">~</span> <span class="st">"grenzwertig"</span>,</span>
-<span id="cb12-295"><a href="#cb12-295" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span>              <span class="sc">~</span> <span class="st">"ok"</span></span>
-<span id="cb12-296"><a href="#cb12-296" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-297"><a href="#cb12-297" aria-hidden="true" tabindex="-1"></a>flag_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p) dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
-<span id="cb12-298"><a href="#cb12-298" aria-hidden="true" tabindex="-1"></a>  p <span class="sc">&lt;</span> .<span class="dv">20</span> <span class="sc">|</span> p <span class="sc">&gt;</span> .<span class="dv">80</span> <span class="sc">~</span> <span class="st">"Decken/Boden"</span>,</span>
-<span id="cb12-299"><a href="#cb12-299" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span>              <span class="sc">~</span> <span class="st">"ok"</span></span>
-<span id="cb12-300"><a href="#cb12-300" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-301"><a href="#cb12-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-302"><a href="#cb12-302" aria-hidden="true" tabindex="-1"></a>item_stats <span class="sc">|&gt;</span></span>
-<span id="cb12-303"><a href="#cb12-303" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">rownames_to_column</span>(<span class="st">"Item"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-304"><a href="#cb12-304" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">transmute</span>(</span>
-<span id="cb12-305"><a href="#cb12-305" aria-hidden="true" tabindex="-1"></a>    Item,</span>
-<span id="cb12-306"><a href="#cb12-306" aria-hidden="true" tabindex="-1"></a>    <span class="at">Schwierigkeit_P   =</span> <span class="fu">round</span>(mean, <span class="dv">2</span>),</span>
-<span id="cb12-307"><a href="#cb12-307" aria-hidden="true" tabindex="-1"></a>    <span class="at">Bewertung_P       =</span> <span class="fu">flag_p</span>(mean),</span>
-<span id="cb12-308"><a href="#cb12-308" aria-hidden="true" tabindex="-1"></a>    <span class="at">Trennschaerfe_rit =</span> <span class="fu">round</span>(r.drop, <span class="dv">2</span>),</span>
-<span id="cb12-309"><a href="#cb12-309" aria-hidden="true" tabindex="-1"></a>    <span class="at">Bewertung_rit     =</span> <span class="fu">flag_rit</span>(r.drop)</span>
-<span id="cb12-310"><a href="#cb12-310" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb12-311"><a href="#cb12-311" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-312"><a href="#cb12-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-315"><a href="#cb12-315" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-316"><a href="#cb12-316" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: deskriptiv-score</span></span>
-<span id="cb12-317"><a href="#cb12-317" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-318"><a href="#cb12-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-319"><a href="#cb12-319" aria-hidden="true" tabindex="-1"></a><span class="co"># Personen-Mittelwerte (Mittelwert, SD, Median) je Skala</span></span>
-<span id="cb12-320"><a href="#cb12-320" aria-hidden="true" tabindex="-1"></a>Data_S_Mean <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(Data_S, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-321"><a href="#cb12-321" aria-hidden="true" tabindex="-1"></a>Data_L_Mean <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(Data_L, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-322"><a href="#cb12-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-323"><a href="#cb12-323" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(Data_S_Mean)   <span class="co"># GEB-12</span></span>
-<span id="cb12-324"><a href="#cb12-324" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(Data_L_Mean)   <span class="co"># GEB-50</span></span>
-<span id="cb12-325"><a href="#cb12-325" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-326"><a href="#cb12-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-327"><a href="#cb12-327" aria-hidden="true" tabindex="-1"></a>Erwartung: Alle Itemschwierigkeiten liegen im Bereich $P = .20$ bis $.80$ und</span>
-<span id="cb12-328"><a href="#cb12-328" aria-hidden="true" tabindex="-1"></a>alle Trennschärfen über $r_{it} &gt; .40$; andernfalls wäre der betreffende</span>
-<span id="cb12-329"><a href="#cb12-329" aria-hidden="true" tabindex="-1"></a>Itemkandidat zu diskutieren.</span>
-<span id="cb12-330"><a href="#cb12-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-331"><a href="#cb12-331" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reliabilität: Alpha, Omega und Split-Half</span></span>
+<span id="cb12-277"><a href="#cb12-277" aria-hidden="true" tabindex="-1"></a>Zunächst werden Item- und Skalenkennwerte für Kurz- und Langform beschrieben.</span>
+<span id="cb12-278"><a href="#cb12-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-281"><a href="#cb12-281" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-282"><a href="#cb12-282" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-deskriptiv</span></span>
+<span id="cb12-283"><a href="#cb12-283" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Itemkennwerte der GEB-12 (Schwierigkeit, Trennschärfe)"</span></span>
+<span id="cb12-284"><a href="#cb12-284" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-285"><a href="#cb12-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-286"><a href="#cb12-286" aria-hidden="true" tabindex="-1"></a><span class="co"># Itemstatistiken: mean = Itemschwierigkeit P (Mittelwert bei 0/1),</span></span>
+<span id="cb12-287"><a href="#cb12-287" aria-hidden="true" tabindex="-1"></a><span class="co"># r.drop = part-whole-korrigierte Trennschaerfe (Item NICHT im Score -&gt;</span></span>
+<span id="cb12-288"><a href="#cb12-288" aria-hidden="true" tabindex="-1"></a><span class="co">#          vermeidet kuenstlich ueberhoehte Werte bei Item-Overlap)</span></span>
+<span id="cb12-289"><a href="#cb12-289" aria-hidden="true" tabindex="-1"></a>item_stats <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">alpha</span>(Data_S, <span class="at">check.keys =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>item.stats</span>
+<span id="cb12-290"><a href="#cb12-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-291"><a href="#cb12-291" aria-hidden="true" tabindex="-1"></a><span class="co"># Ampel-Flags (Textform, render-sicher in HTML und PDF):</span></span>
+<span id="cb12-292"><a href="#cb12-292" aria-hidden="true" tabindex="-1"></a><span class="co">#   Trennschaerfe r.drop &lt; .30 -&gt; "kritisch", &lt; .40 -&gt; "grenzwertig"</span></span>
+<span id="cb12-293"><a href="#cb12-293" aria-hidden="true" tabindex="-1"></a><span class="co">#   Schwierigkeit P ausserhalb .20-.80 -&gt; Decken-/Bodeneffekt</span></span>
+<span id="cb12-294"><a href="#cb12-294" aria-hidden="true" tabindex="-1"></a>flag_rit <span class="ot">&lt;-</span> <span class="cf">function</span>(r) dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb12-295"><a href="#cb12-295" aria-hidden="true" tabindex="-1"></a>  r <span class="sc">&lt;</span> .<span class="dv">30</span>           <span class="sc">~</span> <span class="st">"kritisch"</span>,</span>
+<span id="cb12-296"><a href="#cb12-296" aria-hidden="true" tabindex="-1"></a>  r <span class="sc">&lt;</span> .<span class="dv">40</span>           <span class="sc">~</span> <span class="st">"grenzwertig"</span>,</span>
+<span id="cb12-297"><a href="#cb12-297" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span>              <span class="sc">~</span> <span class="st">"ok"</span></span>
+<span id="cb12-298"><a href="#cb12-298" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-299"><a href="#cb12-299" aria-hidden="true" tabindex="-1"></a>flag_p <span class="ot">&lt;-</span> <span class="cf">function</span>(p) dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb12-300"><a href="#cb12-300" aria-hidden="true" tabindex="-1"></a>  p <span class="sc">&lt;</span> .<span class="dv">20</span> <span class="sc">|</span> p <span class="sc">&gt;</span> .<span class="dv">80</span> <span class="sc">~</span> <span class="st">"Decken/Boden"</span>,</span>
+<span id="cb12-301"><a href="#cb12-301" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span>              <span class="sc">~</span> <span class="st">"ok"</span></span>
+<span id="cb12-302"><a href="#cb12-302" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-303"><a href="#cb12-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-304"><a href="#cb12-304" aria-hidden="true" tabindex="-1"></a>item_stats <span class="sc">|&gt;</span></span>
+<span id="cb12-305"><a href="#cb12-305" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">rownames_to_column</span>(<span class="st">"Item"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-306"><a href="#cb12-306" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">transmute</span>(</span>
+<span id="cb12-307"><a href="#cb12-307" aria-hidden="true" tabindex="-1"></a>    Item,</span>
+<span id="cb12-308"><a href="#cb12-308" aria-hidden="true" tabindex="-1"></a>    <span class="at">Schwierigkeit_P   =</span> <span class="fu">round</span>(mean, <span class="dv">2</span>),</span>
+<span id="cb12-309"><a href="#cb12-309" aria-hidden="true" tabindex="-1"></a>    <span class="at">Bewertung_P       =</span> <span class="fu">flag_p</span>(mean),</span>
+<span id="cb12-310"><a href="#cb12-310" aria-hidden="true" tabindex="-1"></a>    <span class="at">Trennschaerfe_rit =</span> <span class="fu">round</span>(r.drop, <span class="dv">2</span>),</span>
+<span id="cb12-311"><a href="#cb12-311" aria-hidden="true" tabindex="-1"></a>    <span class="at">Bewertung_rit     =</span> <span class="fu">flag_rit</span>(r.drop)</span>
+<span id="cb12-312"><a href="#cb12-312" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-313"><a href="#cb12-313" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-314"><a href="#cb12-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-317"><a href="#cb12-317" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-318"><a href="#cb12-318" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: deskriptiv-score</span></span>
+<span id="cb12-319"><a href="#cb12-319" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-320"><a href="#cb12-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-321"><a href="#cb12-321" aria-hidden="true" tabindex="-1"></a><span class="co"># Personen-Mittelwerte (Mittelwert, SD, Median) je Skala</span></span>
+<span id="cb12-322"><a href="#cb12-322" aria-hidden="true" tabindex="-1"></a>Data_S_Mean <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(Data_S, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-323"><a href="#cb12-323" aria-hidden="true" tabindex="-1"></a>Data_L_Mean <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(Data_L, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-324"><a href="#cb12-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-325"><a href="#cb12-325" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(Data_S_Mean)   <span class="co"># GEB-12</span></span>
+<span id="cb12-326"><a href="#cb12-326" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(Data_L_Mean)   <span class="co"># GEB-50</span></span>
+<span id="cb12-327"><a href="#cb12-327" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-328"><a href="#cb12-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-329"><a href="#cb12-329" aria-hidden="true" tabindex="-1"></a>Erwartung: Alle Itemschwierigkeiten liegen im Bereich $P = .20$ bis $.80$ und</span>
+<span id="cb12-330"><a href="#cb12-330" aria-hidden="true" tabindex="-1"></a>alle Trennschärfen über $r_{it} &gt; .40$; andernfalls wäre der betreffende</span>
+<span id="cb12-331"><a href="#cb12-331" aria-hidden="true" tabindex="-1"></a>Itemkandidat zu diskutieren.</span>
 <span id="cb12-332"><a href="#cb12-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-333"><a href="#cb12-333" aria-hidden="true" tabindex="-1"></a>Berichtet werden drei Reliabilitätsschätzer, jeweils für Kurz- und Langform.</span>
+<span id="cb12-333"><a href="#cb12-333" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reliabilität: Alpha, Omega und Split-Half</span></span>
 <span id="cb12-334"><a href="#cb12-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-337"><a href="#cb12-337" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-338"><a href="#cb12-338" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: reliabilitaet</span></span>
-<span id="cb12-339"><a href="#cb12-339" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-340"><a href="#cb12-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-341"><a href="#cb12-341" aria-hidden="true" tabindex="-1"></a><span class="co"># Cronbachs Alpha (check.keys = TRUE polt negativ korrelierende Items</span></span>
-<span id="cb12-342"><a href="#cb12-342" aria-hidden="true" tabindex="-1"></a><span class="co"># automatisch um und warnt bei Bedarf)</span></span>
-<span id="cb12-343"><a href="#cb12-343" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(Data_S, <span class="at">check.keys =</span> <span class="cn">TRUE</span>)   <span class="co"># GEB-12</span></span>
-<span id="cb12-344"><a href="#cb12-344" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(Data_L, <span class="at">check.keys =</span> <span class="cn">TRUE</span>)   <span class="co"># GEB-50</span></span>
-<span id="cb12-345"><a href="#cb12-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-346"><a href="#cb12-346" aria-hidden="true" tabindex="-1"></a><span class="co"># McDonalds Omega ueber die sechs Handlungsbereiche</span></span>
-<span id="cb12-347"><a href="#cb12-347" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">omega</span>(Data_S, <span class="at">nfactors =</span> <span class="dv">6</span>)        <span class="co"># GEB-12</span></span>
-<span id="cb12-348"><a href="#cb12-348" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">omega</span>(Data_L, <span class="at">nfactors =</span> <span class="dv">6</span>)        <span class="co"># GEB-50</span></span>
-<span id="cb12-349"><a href="#cb12-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-350"><a href="#cb12-350" aria-hidden="true" tabindex="-1"></a><span class="co"># Split-Half-Reliabilitaet</span></span>
-<span id="cb12-351"><a href="#cb12-351" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">splitHalf</span>(Data_S)                  <span class="co"># GEB-12</span></span>
-<span id="cb12-352"><a href="#cb12-352" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">splitHalf</span>(Data_L)                  <span class="co"># GEB-50</span></span>
-<span id="cb12-353"><a href="#cb12-353" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-354"><a href="#cb12-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-355"><a href="#cb12-355" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb12-356"><a href="#cb12-356" aria-hidden="true" tabindex="-1"></a><span class="fu">## Maßstab</span></span>
-<span id="cb12-357"><a href="#cb12-357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-358"><a href="#cb12-358" aria-hidden="true" tabindex="-1"></a>Als Zielwert gilt $\alpha \geq .70$. Da die GEB-12 nur etwa ein Viertel der</span>
-<span id="cb12-359"><a href="#cb12-359" aria-hidden="true" tabindex="-1"></a>Items der Langform enthält, ist eine **Reduktion** gegenüber der</span>
-<span id="cb12-360"><a href="#cb12-360" aria-hidden="true" tabindex="-1"></a>Separationsreliabilität der Vollversion ($.71$–$.88$) erwartbar und unkritisch,</span>
-<span id="cb12-361"><a href="#cb12-361" aria-hidden="true" tabindex="-1"></a>solange $.70$ erreicht wird.</span>
-<span id="cb12-362"><a href="#cb12-362" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb12-363"><a href="#cb12-363" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-364"><a href="#cb12-364" aria-hidden="true" tabindex="-1"></a><span class="fu">## Korrelation Kurzform vs. Langform</span></span>
+<span id="cb12-335"><a href="#cb12-335" aria-hidden="true" tabindex="-1"></a>Berichtet werden drei Reliabilitätsschätzer, jeweils für Kurz- und Langform.</span>
+<span id="cb12-336"><a href="#cb12-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-339"><a href="#cb12-339" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-340"><a href="#cb12-340" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: reliabilitaet</span></span>
+<span id="cb12-341"><a href="#cb12-341" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-342"><a href="#cb12-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-343"><a href="#cb12-343" aria-hidden="true" tabindex="-1"></a><span class="co"># Cronbachs Alpha (check.keys = TRUE polt negativ korrelierende Items</span></span>
+<span id="cb12-344"><a href="#cb12-344" aria-hidden="true" tabindex="-1"></a><span class="co"># automatisch um und warnt bei Bedarf)</span></span>
+<span id="cb12-345"><a href="#cb12-345" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(Data_S, <span class="at">check.keys =</span> <span class="cn">TRUE</span>)   <span class="co"># GEB-12</span></span>
+<span id="cb12-346"><a href="#cb12-346" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">alpha</span>(Data_L, <span class="at">check.keys =</span> <span class="cn">TRUE</span>)   <span class="co"># GEB-50</span></span>
+<span id="cb12-347"><a href="#cb12-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-348"><a href="#cb12-348" aria-hidden="true" tabindex="-1"></a><span class="co"># McDonalds Omega ueber die sechs Handlungsbereiche</span></span>
+<span id="cb12-349"><a href="#cb12-349" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">omega</span>(Data_S, <span class="at">nfactors =</span> <span class="dv">6</span>)        <span class="co"># GEB-12</span></span>
+<span id="cb12-350"><a href="#cb12-350" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">omega</span>(Data_L, <span class="at">nfactors =</span> <span class="dv">6</span>)        <span class="co"># GEB-50</span></span>
+<span id="cb12-351"><a href="#cb12-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-352"><a href="#cb12-352" aria-hidden="true" tabindex="-1"></a><span class="co"># Split-Half-Reliabilitaet</span></span>
+<span id="cb12-353"><a href="#cb12-353" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">splitHalf</span>(Data_S)                  <span class="co"># GEB-12</span></span>
+<span id="cb12-354"><a href="#cb12-354" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">splitHalf</span>(Data_L)                  <span class="co"># GEB-50</span></span>
+<span id="cb12-355"><a href="#cb12-355" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-356"><a href="#cb12-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-357"><a href="#cb12-357" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb12-358"><a href="#cb12-358" aria-hidden="true" tabindex="-1"></a><span class="fu">## Maßstab</span></span>
+<span id="cb12-359"><a href="#cb12-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-360"><a href="#cb12-360" aria-hidden="true" tabindex="-1"></a>Als Zielwert gilt $\alpha \geq .70$. Da die GEB-12 nur etwa ein Viertel der</span>
+<span id="cb12-361"><a href="#cb12-361" aria-hidden="true" tabindex="-1"></a>Items der Langform enthält, ist eine **Reduktion** gegenüber der</span>
+<span id="cb12-362"><a href="#cb12-362" aria-hidden="true" tabindex="-1"></a>Separationsreliabilität der Vollversion ($.71$–$.88$) erwartbar und unkritisch,</span>
+<span id="cb12-363"><a href="#cb12-363" aria-hidden="true" tabindex="-1"></a>solange $.70$ erreicht wird.</span>
+<span id="cb12-364"><a href="#cb12-364" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb12-365"><a href="#cb12-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-366"><a href="#cb12-366" aria-hidden="true" tabindex="-1"></a>Das Kernkriterium der Konstruktvalidität nach @smith2000sins ist die</span>
-<span id="cb12-367"><a href="#cb12-367" aria-hidden="true" tabindex="-1"></a>Übereinstimmung der Personenwerte beider Formen.</span>
-<span id="cb12-368"><a href="#cb12-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-371"><a href="#cb12-371" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-372"><a href="#cb12-372" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-korrelation</span></span>
-<span id="cb12-373"><a href="#cb12-373" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Zusammenhang der Summenscores von GEB-12 und GEB-50"</span></span>
-<span id="cb12-374"><a href="#cb12-374" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-375"><a href="#cb12-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-376"><a href="#cb12-376" aria-hidden="true" tabindex="-1"></a><span class="co"># Summenscores beider Formen</span></span>
-<span id="cb12-377"><a href="#cb12-377" aria-hidden="true" tabindex="-1"></a>Sum_S <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(Data_S, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)   <span class="co"># GEB-12</span></span>
-<span id="cb12-378"><a href="#cb12-378" aria-hidden="true" tabindex="-1"></a>Sum_L <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(Data_L, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)   <span class="co"># GEB-50</span></span>
-<span id="cb12-379"><a href="#cb12-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-380"><a href="#cb12-380" aria-hidden="true" tabindex="-1"></a><span class="co"># Spearman-Rangkorrelation (robust gegenueber nicht-linearen,</span></span>
-<span id="cb12-381"><a href="#cb12-381" aria-hidden="true" tabindex="-1"></a><span class="co"># monotonen Zusammenhaengen und ordinalen Summenscores)</span></span>
-<span id="cb12-382"><a href="#cb12-382" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(Sum_L, Sum_S, <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
-<span id="cb12-383"><a href="#cb12-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-384"><a href="#cb12-384" aria-hidden="true" tabindex="-1"></a><span class="co"># Streudiagramm</span></span>
-<span id="cb12-385"><a href="#cb12-385" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Sum_L, Sum_S,</span>
-<span id="cb12-386"><a href="#cb12-386" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"GEB-50 Summenscore"</span>, <span class="at">ylab =</span> <span class="st">"GEB-12 Summenscore"</span>,</span>
-<span id="cb12-387"><a href="#cb12-387" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> grDevices<span class="sc">::</span><span class="fu">adjustcolor</span>(<span class="st">"steelblue"</span>, <span class="fl">0.7</span>))</span>
-<span id="cb12-388"><a href="#cb12-388" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(Sum_S <span class="sc">~</span> Sum_L), <span class="at">col =</span> <span class="st">"firebrick"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb12-389"><a href="#cb12-389" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-390"><a href="#cb12-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-391"><a href="#cb12-391" aria-hidden="true" tabindex="-1"></a>Eine Korrelation von $r \geq .85$ würde belegen, dass die Kurzform die</span>
-<span id="cb12-392"><a href="#cb12-392" aria-hidden="true" tabindex="-1"></a>Personenordnung der Langform weitgehend reproduziert.</span>
-<span id="cb12-393"><a href="#cb12-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-394"><a href="#cb12-394" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ergebnisse (Faktorstruktur und IRT)</span></span>
+<span id="cb12-366"><a href="#cb12-366" aria-hidden="true" tabindex="-1"></a><span class="fu">## Korrelation Kurzform vs. Langform</span></span>
+<span id="cb12-367"><a href="#cb12-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-368"><a href="#cb12-368" aria-hidden="true" tabindex="-1"></a>Das Kernkriterium der Konstruktvalidität nach @smith2000sins ist die</span>
+<span id="cb12-369"><a href="#cb12-369" aria-hidden="true" tabindex="-1"></a>Übereinstimmung der Personenwerte beider Formen.</span>
+<span id="cb12-370"><a href="#cb12-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-373"><a href="#cb12-373" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-374"><a href="#cb12-374" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-korrelation</span></span>
+<span id="cb12-375"><a href="#cb12-375" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Zusammenhang der Summenscores von GEB-12 und GEB-50"</span></span>
+<span id="cb12-376"><a href="#cb12-376" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-377"><a href="#cb12-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-378"><a href="#cb12-378" aria-hidden="true" tabindex="-1"></a><span class="co"># Summenscores beider Formen</span></span>
+<span id="cb12-379"><a href="#cb12-379" aria-hidden="true" tabindex="-1"></a>Sum_S <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(Data_S, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)   <span class="co"># GEB-12</span></span>
+<span id="cb12-380"><a href="#cb12-380" aria-hidden="true" tabindex="-1"></a>Sum_L <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(Data_L, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)   <span class="co"># GEB-50</span></span>
+<span id="cb12-381"><a href="#cb12-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-382"><a href="#cb12-382" aria-hidden="true" tabindex="-1"></a><span class="co"># Spearman-Rangkorrelation (robust gegenueber nicht-linearen,</span></span>
+<span id="cb12-383"><a href="#cb12-383" aria-hidden="true" tabindex="-1"></a><span class="co"># monotonen Zusammenhaengen und ordinalen Summenscores)</span></span>
+<span id="cb12-384"><a href="#cb12-384" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(Sum_L, Sum_S, <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb12-385"><a href="#cb12-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-386"><a href="#cb12-386" aria-hidden="true" tabindex="-1"></a><span class="co"># Streudiagramm</span></span>
+<span id="cb12-387"><a href="#cb12-387" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Sum_L, Sum_S,</span>
+<span id="cb12-388"><a href="#cb12-388" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"GEB-50 Summenscore"</span>, <span class="at">ylab =</span> <span class="st">"GEB-12 Summenscore"</span>,</span>
+<span id="cb12-389"><a href="#cb12-389" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> grDevices<span class="sc">::</span><span class="fu">adjustcolor</span>(<span class="st">"steelblue"</span>, <span class="fl">0.7</span>))</span>
+<span id="cb12-390"><a href="#cb12-390" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(Sum_S <span class="sc">~</span> Sum_L), <span class="at">col =</span> <span class="st">"firebrick"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb12-391"><a href="#cb12-391" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-392"><a href="#cb12-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-393"><a href="#cb12-393" aria-hidden="true" tabindex="-1"></a>Eine Korrelation von $r \geq .85$ würde belegen, dass die Kurzform die</span>
+<span id="cb12-394"><a href="#cb12-394" aria-hidden="true" tabindex="-1"></a>Personenordnung der Langform weitgehend reproduziert.</span>
 <span id="cb12-395"><a href="#cb12-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-396"><a href="#cb12-396" aria-hidden="true" tabindex="-1"></a><span class="fu">## Konfirmatorische Faktorenanalyse</span></span>
+<span id="cb12-396"><a href="#cb12-396" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ergebnisse (Faktorstruktur und IRT)</span></span>
 <span id="cb12-397"><a href="#cb12-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-398"><a href="#cb12-398" aria-hidden="true" tabindex="-1"></a>Geprüft wird die faktorielle Struktur der GEB-12 über ein **Sechs-Faktoren-</span>
-<span id="cb12-399"><a href="#cb12-399" aria-hidden="true" tabindex="-1"></a>Modell**, das die sechs Handlungsbereiche als latente Faktoren mit je zwei</span>
-<span id="cb12-400"><a href="#cb12-400" aria-hidden="true" tabindex="-1"></a>Indikatoren abbildet. Da die Items dichotom sind, wird der Schätzer <span class="in">`WLSMV`</span> mit</span>
-<span id="cb12-401"><a href="#cb12-401" aria-hidden="true" tabindex="-1"></a>Deklaration der Items als <span class="in">`ordered`</span> verwendet.</span>
-<span id="cb12-402"><a href="#cb12-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-405"><a href="#cb12-405" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-406"><a href="#cb12-406" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: cfa-modell</span></span>
-<span id="cb12-407"><a href="#cb12-407" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-408"><a href="#cb12-408" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-409"><a href="#cb12-409" aria-hidden="true" tabindex="-1"></a><span class="co"># Sechs-Faktoren-Modell (je Handlungsbereich ein Faktor mit 2 Items)</span></span>
-<span id="cb12-410"><a href="#cb12-410" aria-hidden="true" tabindex="-1"></a>CFA_model <span class="ot">&lt;-</span> <span class="st">'</span></span>
-<span id="cb12-411"><a href="#cb12-411" aria-hidden="true" tabindex="-1"></a><span class="st">  Energiesparen   =~ KG01_01 + KG01_02</span></span>
-<span id="cb12-412"><a href="#cb12-412" aria-hidden="true" tabindex="-1"></a><span class="st">  Mobilitaet      =~ KG01_03 + KG01_04</span></span>
-<span id="cb12-413"><a href="#cb12-413" aria-hidden="true" tabindex="-1"></a><span class="st">  Abfallvermeiden =~ KG01_05 + KG01_06</span></span>
-<span id="cb12-414"><a href="#cb12-414" aria-hidden="true" tabindex="-1"></a><span class="st">  Konsum          =~ KG01_07 + KG01_08</span></span>
-<span id="cb12-415"><a href="#cb12-415" aria-hidden="true" tabindex="-1"></a><span class="st">  Recycling       =~ KG01_09 + KG01_10</span></span>
-<span id="cb12-416"><a href="#cb12-416" aria-hidden="true" tabindex="-1"></a><span class="st">  Engagement      =~ KG01_11 + KG01_12</span></span>
-<span id="cb12-417"><a href="#cb12-417" aria-hidden="true" tabindex="-1"></a><span class="st">'</span></span>
-<span id="cb12-418"><a href="#cb12-418" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-419"><a href="#cb12-419" aria-hidden="true" tabindex="-1"></a>Items_S <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"KG01_01"</span>, <span class="st">"KG01_02"</span>, <span class="st">"KG01_03"</span>, <span class="st">"KG01_04"</span>,</span>
-<span id="cb12-420"><a href="#cb12-420" aria-hidden="true" tabindex="-1"></a>             <span class="st">"KG01_05"</span>, <span class="st">"KG01_06"</span>, <span class="st">"KG01_07"</span>, <span class="st">"KG01_08"</span>,</span>
-<span id="cb12-421"><a href="#cb12-421" aria-hidden="true" tabindex="-1"></a>             <span class="st">"KG01_09"</span>, <span class="st">"KG01_10"</span>, <span class="st">"KG01_11"</span>, <span class="st">"KG01_12"</span>)</span>
-<span id="cb12-422"><a href="#cb12-422" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-423"><a href="#cb12-423" aria-hidden="true" tabindex="-1"></a>Fit <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(CFA_model, <span class="at">data =</span> Data_S,</span>
-<span id="cb12-424"><a href="#cb12-424" aria-hidden="true" tabindex="-1"></a>                   <span class="at">ordered =</span> Items_S, <span class="at">estimator =</span> <span class="st">"WLSMV"</span>)</span>
-<span id="cb12-425"><a href="#cb12-425" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-426"><a href="#cb12-426" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Fit, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-427"><a href="#cb12-427" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-428"><a href="#cb12-428" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-431"><a href="#cb12-431" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-432"><a href="#cb12-432" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-cfa-fit</span></span>
-<span id="cb12-433"><a href="#cb12-433" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Globale Fit-Indizes des CFA-Modells"</span></span>
-<span id="cb12-434"><a href="#cb12-434" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-435"><a href="#cb12-435" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-436"><a href="#cb12-436" aria-hidden="true" tabindex="-1"></a><span class="co"># zentrale Fit-Indizes kompakt extrahieren</span></span>
-<span id="cb12-437"><a href="#cb12-437" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">fitMeasures</span>(</span>
-<span id="cb12-438"><a href="#cb12-438" aria-hidden="true" tabindex="-1"></a>  Fit, <span class="fu">c</span>(<span class="st">"chisq.scaled"</span>, <span class="st">"df"</span>, <span class="st">"cfi.scaled"</span>, <span class="st">"rmsea.scaled"</span>, <span class="st">"srmr"</span>)</span>
-<span id="cb12-439"><a href="#cb12-439" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-440"><a href="#cb12-440" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-441"><a href="#cb12-441" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb12-442"><a href="#cb12-442" aria-hidden="true" tabindex="-1"></a>  <span class="at">Modell  =</span> <span class="st">"6 Handlungsbereiche"</span>,</span>
-<span id="cb12-443"><a href="#cb12-443" aria-hidden="true" tabindex="-1"></a>  <span class="at">Chi2    =</span> <span class="fu">round</span>(m[[<span class="st">"chisq.scaled"</span>]], <span class="dv">1</span>),</span>
-<span id="cb12-444"><a href="#cb12-444" aria-hidden="true" tabindex="-1"></a>  <span class="at">df      =</span> m[[<span class="st">"df"</span>]],</span>
-<span id="cb12-445"><a href="#cb12-445" aria-hidden="true" tabindex="-1"></a>  <span class="at">CFI     =</span> <span class="fu">round</span>(m[[<span class="st">"cfi.scaled"</span>]], <span class="dv">3</span>),</span>
-<span id="cb12-446"><a href="#cb12-446" aria-hidden="true" tabindex="-1"></a>  <span class="at">RMSEA   =</span> <span class="fu">round</span>(m[[<span class="st">"rmsea.scaled"</span>]], <span class="dv">3</span>),</span>
-<span id="cb12-447"><a href="#cb12-447" aria-hidden="true" tabindex="-1"></a>  <span class="at">SRMR    =</span> <span class="fu">round</span>(m[[<span class="st">"srmr"</span>]], <span class="dv">3</span>)</span>
-<span id="cb12-448"><a href="#cb12-448" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-449"><a href="#cb12-449" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-450"><a href="#cb12-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-451"><a href="#cb12-451" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb12-452"><a href="#cb12-452" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stichproben- und Identifikationsvorbehalt</span></span>
-<span id="cb12-453"><a href="#cb12-453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-454"><a href="#cb12-454" aria-hidden="true" tabindex="-1"></a>Das Sechs-Faktoren-Modell hat Faktoren mit je nur **zwei Indikatoren**; solche</span>
-<span id="cb12-455"><a href="#cb12-455" aria-hidden="true" tabindex="-1"></a>Faktoren sind einzeln nicht identifiziert und nur über die Faktorkovarianzen</span>
-<span id="cb12-456"><a href="#cb12-456" aria-hidden="true" tabindex="-1"></a>schätzbar. In Kombination mit $N \approx 50$ und 12 dichotomen Items ist die CFA</span>
-<span id="cb12-457"><a href="#cb12-457" aria-hidden="true" tabindex="-1"></a>**schwach gepowert**: Schätzungen können Warnungen erzeugen, und die Fit-Indizes</span>
-<span id="cb12-458"><a href="#cb12-458" aria-hidden="true" tabindex="-1"></a>(CFI $&gt; .95$, RMSEA $&lt; .06$ als Zielwerte) sind mit Vorsicht zu interpretieren.</span>
-<span id="cb12-459"><a href="#cb12-459" aria-hidden="true" tabindex="-1"></a>Sie werden daher gemeinsam mit den Reliabilitäts- und Rasch-Ergebnissen</span>
-<span id="cb12-460"><a href="#cb12-460" aria-hidden="true" tabindex="-1"></a>bewertet.</span>
-<span id="cb12-461"><a href="#cb12-461" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb12-462"><a href="#cb12-462" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-463"><a href="#cb12-463" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rasch-Modell (IRT)</span></span>
+<span id="cb12-398"><a href="#cb12-398" aria-hidden="true" tabindex="-1"></a><span class="fu">## Konfirmatorische Faktorenanalyse</span></span>
+<span id="cb12-399"><a href="#cb12-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-400"><a href="#cb12-400" aria-hidden="true" tabindex="-1"></a>Geprüft wird die faktorielle Struktur der GEB-12 über ein **Sechs-Faktoren-</span>
+<span id="cb12-401"><a href="#cb12-401" aria-hidden="true" tabindex="-1"></a>Modell**, das die sechs Handlungsbereiche als latente Faktoren mit je zwei</span>
+<span id="cb12-402"><a href="#cb12-402" aria-hidden="true" tabindex="-1"></a>Indikatoren abbildet. Da die Items dichotom sind, wird der Schätzer <span class="in">`WLSMV`</span> mit</span>
+<span id="cb12-403"><a href="#cb12-403" aria-hidden="true" tabindex="-1"></a>Deklaration der Items als <span class="in">`ordered`</span> verwendet.</span>
+<span id="cb12-404"><a href="#cb12-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-407"><a href="#cb12-407" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-408"><a href="#cb12-408" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: cfa-modell</span></span>
+<span id="cb12-409"><a href="#cb12-409" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-410"><a href="#cb12-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-411"><a href="#cb12-411" aria-hidden="true" tabindex="-1"></a><span class="co"># Sechs-Faktoren-Modell (je Handlungsbereich ein Faktor mit 2 Items)</span></span>
+<span id="cb12-412"><a href="#cb12-412" aria-hidden="true" tabindex="-1"></a>CFA_model <span class="ot">&lt;-</span> <span class="st">'</span></span>
+<span id="cb12-413"><a href="#cb12-413" aria-hidden="true" tabindex="-1"></a><span class="st">  Energiesparen   =~ KG01_01 + KG01_02</span></span>
+<span id="cb12-414"><a href="#cb12-414" aria-hidden="true" tabindex="-1"></a><span class="st">  Mobilitaet      =~ KG01_03 + KG01_04</span></span>
+<span id="cb12-415"><a href="#cb12-415" aria-hidden="true" tabindex="-1"></a><span class="st">  Abfallvermeiden =~ KG01_05 + KG01_06</span></span>
+<span id="cb12-416"><a href="#cb12-416" aria-hidden="true" tabindex="-1"></a><span class="st">  Konsum          =~ KG01_07 + KG01_08</span></span>
+<span id="cb12-417"><a href="#cb12-417" aria-hidden="true" tabindex="-1"></a><span class="st">  Recycling       =~ KG01_09 + KG01_10</span></span>
+<span id="cb12-418"><a href="#cb12-418" aria-hidden="true" tabindex="-1"></a><span class="st">  Engagement      =~ KG01_11 + KG01_12</span></span>
+<span id="cb12-419"><a href="#cb12-419" aria-hidden="true" tabindex="-1"></a><span class="st">'</span></span>
+<span id="cb12-420"><a href="#cb12-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-421"><a href="#cb12-421" aria-hidden="true" tabindex="-1"></a>Items_S <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"KG01_01"</span>, <span class="st">"KG01_02"</span>, <span class="st">"KG01_03"</span>, <span class="st">"KG01_04"</span>,</span>
+<span id="cb12-422"><a href="#cb12-422" aria-hidden="true" tabindex="-1"></a>             <span class="st">"KG01_05"</span>, <span class="st">"KG01_06"</span>, <span class="st">"KG01_07"</span>, <span class="st">"KG01_08"</span>,</span>
+<span id="cb12-423"><a href="#cb12-423" aria-hidden="true" tabindex="-1"></a>             <span class="st">"KG01_09"</span>, <span class="st">"KG01_10"</span>, <span class="st">"KG01_11"</span>, <span class="st">"KG01_12"</span>)</span>
+<span id="cb12-424"><a href="#cb12-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-425"><a href="#cb12-425" aria-hidden="true" tabindex="-1"></a>Fit <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">cfa</span>(CFA_model, <span class="at">data =</span> Data_S,</span>
+<span id="cb12-426"><a href="#cb12-426" aria-hidden="true" tabindex="-1"></a>                   <span class="at">ordered =</span> Items_S, <span class="at">estimator =</span> <span class="st">"WLSMV"</span>)</span>
+<span id="cb12-427"><a href="#cb12-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-428"><a href="#cb12-428" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Fit, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-429"><a href="#cb12-429" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-430"><a href="#cb12-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-433"><a href="#cb12-433" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-434"><a href="#cb12-434" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-cfa-fit</span></span>
+<span id="cb12-435"><a href="#cb12-435" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Globale Fit-Indizes des CFA-Modells"</span></span>
+<span id="cb12-436"><a href="#cb12-436" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-437"><a href="#cb12-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-438"><a href="#cb12-438" aria-hidden="true" tabindex="-1"></a><span class="co"># zentrale Fit-Indizes kompakt extrahieren</span></span>
+<span id="cb12-439"><a href="#cb12-439" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">fitMeasures</span>(</span>
+<span id="cb12-440"><a href="#cb12-440" aria-hidden="true" tabindex="-1"></a>  Fit, <span class="fu">c</span>(<span class="st">"chisq.scaled"</span>, <span class="st">"df"</span>, <span class="st">"cfi.scaled"</span>, <span class="st">"rmsea.scaled"</span>, <span class="st">"srmr"</span>)</span>
+<span id="cb12-441"><a href="#cb12-441" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-442"><a href="#cb12-442" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-443"><a href="#cb12-443" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb12-444"><a href="#cb12-444" aria-hidden="true" tabindex="-1"></a>  <span class="at">Modell  =</span> <span class="st">"6 Handlungsbereiche"</span>,</span>
+<span id="cb12-445"><a href="#cb12-445" aria-hidden="true" tabindex="-1"></a>  <span class="at">Chi2    =</span> <span class="fu">round</span>(m[[<span class="st">"chisq.scaled"</span>]], <span class="dv">1</span>),</span>
+<span id="cb12-446"><a href="#cb12-446" aria-hidden="true" tabindex="-1"></a>  <span class="at">df      =</span> m[[<span class="st">"df"</span>]],</span>
+<span id="cb12-447"><a href="#cb12-447" aria-hidden="true" tabindex="-1"></a>  <span class="at">CFI     =</span> <span class="fu">round</span>(m[[<span class="st">"cfi.scaled"</span>]], <span class="dv">3</span>),</span>
+<span id="cb12-448"><a href="#cb12-448" aria-hidden="true" tabindex="-1"></a>  <span class="at">RMSEA   =</span> <span class="fu">round</span>(m[[<span class="st">"rmsea.scaled"</span>]], <span class="dv">3</span>),</span>
+<span id="cb12-449"><a href="#cb12-449" aria-hidden="true" tabindex="-1"></a>  <span class="at">SRMR    =</span> <span class="fu">round</span>(m[[<span class="st">"srmr"</span>]], <span class="dv">3</span>)</span>
+<span id="cb12-450"><a href="#cb12-450" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-451"><a href="#cb12-451" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-452"><a href="#cb12-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-453"><a href="#cb12-453" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb12-454"><a href="#cb12-454" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stichproben- und Identifikationsvorbehalt</span></span>
+<span id="cb12-455"><a href="#cb12-455" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-456"><a href="#cb12-456" aria-hidden="true" tabindex="-1"></a>Das Sechs-Faktoren-Modell hat Faktoren mit je nur **zwei Indikatoren**; solche</span>
+<span id="cb12-457"><a href="#cb12-457" aria-hidden="true" tabindex="-1"></a>Faktoren sind einzeln nicht identifiziert und nur über die Faktorkovarianzen</span>
+<span id="cb12-458"><a href="#cb12-458" aria-hidden="true" tabindex="-1"></a>schätzbar. In Kombination mit $N = 60$ und 12 dichotomen Items ist die CFA</span>
+<span id="cb12-459"><a href="#cb12-459" aria-hidden="true" tabindex="-1"></a>**schwach gepowert**: Schätzungen können Warnungen erzeugen, und die Fit-Indizes</span>
+<span id="cb12-460"><a href="#cb12-460" aria-hidden="true" tabindex="-1"></a>(CFI $&gt; .95$, RMSEA $&lt; .06$ als Zielwerte) sind mit Vorsicht zu interpretieren.</span>
+<span id="cb12-461"><a href="#cb12-461" aria-hidden="true" tabindex="-1"></a>Sie werden daher gemeinsam mit den Reliabilitäts- und Rasch-Ergebnissen</span>
+<span id="cb12-462"><a href="#cb12-462" aria-hidden="true" tabindex="-1"></a>bewertet.</span>
+<span id="cb12-463"><a href="#cb12-463" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb12-464"><a href="#cb12-464" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-465"><a href="#cb12-465" aria-hidden="true" tabindex="-1"></a>Da die Langform rasch-skaliert ist, wird geprüft, ob die 12 Items das</span>
-<span id="cb12-466"><a href="#cb12-466" aria-hidden="true" tabindex="-1"></a>**dichotome Rasch-Modell** erfüllen. Geschätzt wird mit dem Paket <span class="in">`eRm`</span></span>
-<span id="cb12-467"><a href="#cb12-467" aria-hidden="true" tabindex="-1"></a>(konditionale Maximum-Likelihood). Vor der Schätzung werden die Daten robust</span>
-<span id="cb12-468"><a href="#cb12-468" aria-hidden="true" tabindex="-1"></a>aufbereitet, da <span class="in">`RM()`</span> bei konstanten Items, fehlenden Werten oder Personen mit</span>
-<span id="cb12-469"><a href="#cb12-469" aria-hidden="true" tabindex="-1"></a>perfektem Score (alle 0 / alle 1) abbricht.</span>
-<span id="cb12-470"><a href="#cb12-470" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-473"><a href="#cb12-473" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-474"><a href="#cb12-474" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: rasch-modell</span></span>
-<span id="cb12-475"><a href="#cb12-475" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-476"><a href="#cb12-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-477"><a href="#cb12-477" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Robuste Vorbereitung fuer eRm::RM() ---</span></span>
-<span id="cb12-478"><a href="#cb12-478" aria-hidden="true" tabindex="-1"></a>Rasch_data <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(Data_S)</span>
-<span id="cb12-479"><a href="#cb12-479" aria-hidden="true" tabindex="-1"></a><span class="fu">storage.mode</span>(Rasch_data) <span class="ot">&lt;-</span> <span class="st">"numeric"</span></span>
-<span id="cb12-480"><a href="#cb12-480" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-481"><a href="#cb12-481" aria-hidden="true" tabindex="-1"></a><span class="co"># nur 0/1 zulassen, alles andere -&gt; NA</span></span>
-<span id="cb12-482"><a href="#cb12-482" aria-hidden="true" tabindex="-1"></a>Rasch_data[<span class="sc">!</span>(Rasch_data <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb12-483"><a href="#cb12-483" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-484"><a href="#cb12-484" aria-hidden="true" tabindex="-1"></a><span class="co"># konstante Items (keine Varianz) ausschliessen</span></span>
-<span id="cb12-485"><a href="#cb12-485" aria-hidden="true" tabindex="-1"></a>item_var    <span class="ot">&lt;-</span> <span class="fu">apply</span>(Rasch_data, <span class="dv">2</span>, var, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-486"><a href="#cb12-486" aria-hidden="true" tabindex="-1"></a>const_items <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">is.na</span>(item_var) <span class="sc">|</span> item_var <span class="sc">==</span> <span class="dv">0</span>)</span>
-<span id="cb12-487"><a href="#cb12-487" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(const_items) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb12-488"><a href="#cb12-488" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">"Konstante Items ausgeschlossen: "</span>,</span>
-<span id="cb12-489"><a href="#cb12-489" aria-hidden="true" tabindex="-1"></a>          <span class="fu">paste</span>(<span class="fu">colnames</span>(Rasch_data)[const_items], <span class="at">collapse =</span> <span class="st">", "</span>))</span>
-<span id="cb12-490"><a href="#cb12-490" aria-hidden="true" tabindex="-1"></a>  Rasch_data <span class="ot">&lt;-</span> Rasch_data[, <span class="sc">-</span>const_items, drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
-<span id="cb12-491"><a href="#cb12-491" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-492"><a href="#cb12-492" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-493"><a href="#cb12-493" aria-hidden="true" tabindex="-1"></a><span class="co"># Personen mit fehlenden / extremen Scores entfernen</span></span>
-<span id="cb12-494"><a href="#cb12-494" aria-hidden="true" tabindex="-1"></a>row_scores <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(Rasch_data, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-495"><a href="#cb12-495" aria-hidden="true" tabindex="-1"></a>k_items    <span class="ot">&lt;-</span> <span class="fu">ncol</span>(Rasch_data)</span>
-<span id="cb12-496"><a href="#cb12-496" aria-hidden="true" tabindex="-1"></a>drop_rows  <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">rowSums</span>(<span class="fu">is.na</span>(Rasch_data)) <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">|</span></span>
-<span id="cb12-497"><a href="#cb12-497" aria-hidden="true" tabindex="-1"></a>                    row_scores <span class="sc">==</span> <span class="dv">0</span> <span class="sc">|</span> row_scores <span class="sc">==</span> k_items)</span>
-<span id="cb12-498"><a href="#cb12-498" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(drop_rows) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb12-499"><a href="#cb12-499" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="fu">length</span>(drop_rows), <span class="st">" Personen mit fehlenden/extremen Scores entfernt."</span>)</span>
-<span id="cb12-500"><a href="#cb12-500" aria-hidden="true" tabindex="-1"></a>  Rasch_data <span class="ot">&lt;-</span> Rasch_data[<span class="sc">-</span>drop_rows, , drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
-<span id="cb12-501"><a href="#cb12-501" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-502"><a href="#cb12-502" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-503"><a href="#cb12-503" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Rasch-Modell schaetzen ---</span></span>
-<span id="cb12-504"><a href="#cb12-504" aria-hidden="true" tabindex="-1"></a>Rasch  <span class="ot">&lt;-</span> eRm<span class="sc">::</span><span class="fu">RM</span>(Rasch_data)</span>
-<span id="cb12-505"><a href="#cb12-505" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Rasch)                       <span class="co"># Itemschwierigkeiten (Lokationen)</span></span>
-<span id="cb12-506"><a href="#cb12-506" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-507"><a href="#cb12-507" aria-hidden="true" tabindex="-1"></a>Person <span class="ot">&lt;-</span> eRm<span class="sc">::</span><span class="fu">person.parameter</span>(Rasch)</span>
-<span id="cb12-508"><a href="#cb12-508" aria-hidden="true" tabindex="-1"></a>Person                               <span class="co"># Personenparameter (theta)</span></span>
-<span id="cb12-509"><a href="#cb12-509" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-510"><a href="#cb12-510" aria-hidden="true" tabindex="-1"></a>eRm<span class="sc">::</span><span class="fu">itemfit</span>(Person)                 <span class="co"># Infit/Outfit je Item</span></span>
-<span id="cb12-511"><a href="#cb12-511" aria-hidden="true" tabindex="-1"></a>eRm<span class="sc">::</span><span class="fu">SepRel</span>(Person)                  <span class="co"># Separationsreliabilitaet</span></span>
-<span id="cb12-512"><a href="#cb12-512" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-513"><a href="#cb12-513" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-516"><a href="#cb12-516" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-517"><a href="#cb12-517" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-wrightmap</span></span>
-<span id="cb12-518"><a href="#cb12-518" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Wright Map: Verteilung von Personenfähigkeit und Itemschwierigkeit"</span></span>
-<span id="cb12-519"><a href="#cb12-519" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb12-520"><a href="#cb12-520" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-521"><a href="#cb12-521" aria-hidden="true" tabindex="-1"></a><span class="co"># Personen- und Itemverteilung auf gemeinsamer Logit-Skala</span></span>
-<span id="cb12-522"><a href="#cb12-522" aria-hidden="true" tabindex="-1"></a>eRm<span class="sc">::</span><span class="fu">plotPImap</span>(Rasch, <span class="at">sorted =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-523"><a href="#cb12-523" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-524"><a href="#cb12-524" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-525"><a href="#cb12-525" aria-hidden="true" tabindex="-1"></a>Erwartet werden Item-Fit-Statistiken (Infit/Outfit MSQ) im Bereich um $1.0$</span>
-<span id="cb12-526"><a href="#cb12-526" aria-hidden="true" tabindex="-1"></a>(grob $0.7$–$1.3$) als Zeichen guter Rasch-Passung sowie eine Wright Map, die</span>
-<span id="cb12-527"><a href="#cb12-527" aria-hidden="true" tabindex="-1"></a>zeigt, ob die Itemschwierigkeiten den Bereich der Personenfähigkeiten abdecken –</span>
-<span id="cb12-528"><a href="#cb12-528" aria-hidden="true" tabindex="-1"></a>als Folge der bewussten Mischung leichter und schwerer Items.</span>
-<span id="cb12-529"><a href="#cb12-529" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-530"><a href="#cb12-530" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb12-531"><a href="#cb12-531" aria-hidden="true" tabindex="-1"></a><span class="fu">## Kleine Stichprobe</span></span>
-<span id="cb12-532"><a href="#cb12-532" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-533"><a href="#cb12-533" aria-hidden="true" tabindex="-1"></a>Bei $N \approx 50$ und 12 Items sind die CML-Schätzungen mit breiten</span>
-<span id="cb12-534"><a href="#cb12-534" aria-hidden="true" tabindex="-1"></a>Konfidenzintervallen behaftet. Für robustere Aussagen lassen sich</span>
-<span id="cb12-535"><a href="#cb12-535" aria-hidden="true" tabindex="-1"></a>nichtparametrische Tests heranziehen (<span class="in">`eRm::NPtest()`</span>), die ohne asymptotische</span>
-<span id="cb12-536"><a href="#cb12-536" aria-hidden="true" tabindex="-1"></a>Annahmen auskommen.</span>
-<span id="cb12-537"><a href="#cb12-537" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb12-538"><a href="#cb12-538" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-539"><a href="#cb12-539" aria-hidden="true" tabindex="-1"></a><span class="fu"># Diskussion</span></span>
-<span id="cb12-540"><a href="#cb12-540" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-541"><a href="#cb12-541" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ist die GEB-12 eine gute Kurzform?</span></span>
+<span id="cb12-465"><a href="#cb12-465" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rasch-Modell (IRT)</span></span>
+<span id="cb12-466"><a href="#cb12-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-467"><a href="#cb12-467" aria-hidden="true" tabindex="-1"></a>Da die Langform rasch-skaliert ist, wird geprüft, ob die 12 Items das</span>
+<span id="cb12-468"><a href="#cb12-468" aria-hidden="true" tabindex="-1"></a>**dichotome Rasch-Modell** erfüllen. Geschätzt wird mit dem Paket <span class="in">`eRm`</span></span>
+<span id="cb12-469"><a href="#cb12-469" aria-hidden="true" tabindex="-1"></a>(konditionale Maximum-Likelihood). Vor der Schätzung werden die Daten robust</span>
+<span id="cb12-470"><a href="#cb12-470" aria-hidden="true" tabindex="-1"></a>aufbereitet, da <span class="in">`RM()`</span> bei konstanten Items, fehlenden Werten oder Personen mit</span>
+<span id="cb12-471"><a href="#cb12-471" aria-hidden="true" tabindex="-1"></a>perfektem Score (alle 0 / alle 1) abbricht.</span>
+<span id="cb12-472"><a href="#cb12-472" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-475"><a href="#cb12-475" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-476"><a href="#cb12-476" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: rasch-modell</span></span>
+<span id="cb12-477"><a href="#cb12-477" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-478"><a href="#cb12-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-479"><a href="#cb12-479" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Robuste Vorbereitung fuer eRm::RM() ---</span></span>
+<span id="cb12-480"><a href="#cb12-480" aria-hidden="true" tabindex="-1"></a>Rasch_data <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(Data_S)</span>
+<span id="cb12-481"><a href="#cb12-481" aria-hidden="true" tabindex="-1"></a><span class="fu">storage.mode</span>(Rasch_data) <span class="ot">&lt;-</span> <span class="st">"numeric"</span></span>
+<span id="cb12-482"><a href="#cb12-482" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-483"><a href="#cb12-483" aria-hidden="true" tabindex="-1"></a><span class="co"># nur 0/1 zulassen, alles andere -&gt; NA</span></span>
+<span id="cb12-484"><a href="#cb12-484" aria-hidden="true" tabindex="-1"></a>Rasch_data[<span class="sc">!</span>(Rasch_data <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb12-485"><a href="#cb12-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-486"><a href="#cb12-486" aria-hidden="true" tabindex="-1"></a><span class="co"># konstante Items (keine Varianz) ausschliessen</span></span>
+<span id="cb12-487"><a href="#cb12-487" aria-hidden="true" tabindex="-1"></a>item_var    <span class="ot">&lt;-</span> <span class="fu">apply</span>(Rasch_data, <span class="dv">2</span>, var, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-488"><a href="#cb12-488" aria-hidden="true" tabindex="-1"></a>const_items <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">is.na</span>(item_var) <span class="sc">|</span> item_var <span class="sc">==</span> <span class="dv">0</span>)</span>
+<span id="cb12-489"><a href="#cb12-489" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(const_items) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb12-490"><a href="#cb12-490" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="st">"Konstante Items ausgeschlossen: "</span>,</span>
+<span id="cb12-491"><a href="#cb12-491" aria-hidden="true" tabindex="-1"></a>          <span class="fu">paste</span>(<span class="fu">colnames</span>(Rasch_data)[const_items], <span class="at">collapse =</span> <span class="st">", "</span>))</span>
+<span id="cb12-492"><a href="#cb12-492" aria-hidden="true" tabindex="-1"></a>  Rasch_data <span class="ot">&lt;-</span> Rasch_data[, <span class="sc">-</span>const_items, drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb12-493"><a href="#cb12-493" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-494"><a href="#cb12-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-495"><a href="#cb12-495" aria-hidden="true" tabindex="-1"></a><span class="co"># Personen mit fehlenden / extremen Scores entfernen</span></span>
+<span id="cb12-496"><a href="#cb12-496" aria-hidden="true" tabindex="-1"></a>row_scores <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(Rasch_data, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-497"><a href="#cb12-497" aria-hidden="true" tabindex="-1"></a>k_items    <span class="ot">&lt;-</span> <span class="fu">ncol</span>(Rasch_data)</span>
+<span id="cb12-498"><a href="#cb12-498" aria-hidden="true" tabindex="-1"></a>drop_rows  <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">rowSums</span>(<span class="fu">is.na</span>(Rasch_data)) <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">|</span></span>
+<span id="cb12-499"><a href="#cb12-499" aria-hidden="true" tabindex="-1"></a>                    row_scores <span class="sc">==</span> <span class="dv">0</span> <span class="sc">|</span> row_scores <span class="sc">==</span> k_items)</span>
+<span id="cb12-500"><a href="#cb12-500" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(drop_rows) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb12-501"><a href="#cb12-501" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(<span class="fu">length</span>(drop_rows), <span class="st">" Personen mit fehlenden/extremen Scores entfernt."</span>)</span>
+<span id="cb12-502"><a href="#cb12-502" aria-hidden="true" tabindex="-1"></a>  Rasch_data <span class="ot">&lt;-</span> Rasch_data[<span class="sc">-</span>drop_rows, , drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb12-503"><a href="#cb12-503" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-504"><a href="#cb12-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-505"><a href="#cb12-505" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Rasch-Modell schaetzen ---</span></span>
+<span id="cb12-506"><a href="#cb12-506" aria-hidden="true" tabindex="-1"></a>Rasch  <span class="ot">&lt;-</span> eRm<span class="sc">::</span><span class="fu">RM</span>(Rasch_data)</span>
+<span id="cb12-507"><a href="#cb12-507" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Rasch)                       <span class="co"># Itemschwierigkeiten (Lokationen)</span></span>
+<span id="cb12-508"><a href="#cb12-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-509"><a href="#cb12-509" aria-hidden="true" tabindex="-1"></a>Person <span class="ot">&lt;-</span> eRm<span class="sc">::</span><span class="fu">person.parameter</span>(Rasch)</span>
+<span id="cb12-510"><a href="#cb12-510" aria-hidden="true" tabindex="-1"></a>Person                               <span class="co"># Personenparameter (theta)</span></span>
+<span id="cb12-511"><a href="#cb12-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-512"><a href="#cb12-512" aria-hidden="true" tabindex="-1"></a>eRm<span class="sc">::</span><span class="fu">itemfit</span>(Person)                 <span class="co"># Infit/Outfit je Item</span></span>
+<span id="cb12-513"><a href="#cb12-513" aria-hidden="true" tabindex="-1"></a>eRm<span class="sc">::</span><span class="fu">SepRel</span>(Person)                  <span class="co"># Separationsreliabilitaet</span></span>
+<span id="cb12-514"><a href="#cb12-514" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-515"><a href="#cb12-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-518"><a href="#cb12-518" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-519"><a href="#cb12-519" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-wrightmap</span></span>
+<span id="cb12-520"><a href="#cb12-520" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Wright Map: Verteilung von Personenfähigkeit und Itemschwierigkeit"</span></span>
+<span id="cb12-521"><a href="#cb12-521" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-522"><a href="#cb12-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-523"><a href="#cb12-523" aria-hidden="true" tabindex="-1"></a><span class="co"># Personen- und Itemverteilung auf gemeinsamer Logit-Skala</span></span>
+<span id="cb12-524"><a href="#cb12-524" aria-hidden="true" tabindex="-1"></a>eRm<span class="sc">::</span><span class="fu">plotPImap</span>(Rasch, <span class="at">sorted =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-525"><a href="#cb12-525" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-526"><a href="#cb12-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-527"><a href="#cb12-527" aria-hidden="true" tabindex="-1"></a>Erwartet werden Item-Fit-Statistiken (Infit/Outfit MSQ) im Bereich um $1.0$</span>
+<span id="cb12-528"><a href="#cb12-528" aria-hidden="true" tabindex="-1"></a>(grob $0.7$–$1.3$) als Zeichen guter Rasch-Passung sowie eine Wright Map, die</span>
+<span id="cb12-529"><a href="#cb12-529" aria-hidden="true" tabindex="-1"></a>zeigt, ob die Itemschwierigkeiten den Bereich der Personenfähigkeiten abdecken –</span>
+<span id="cb12-530"><a href="#cb12-530" aria-hidden="true" tabindex="-1"></a>als Folge der bewussten Mischung leichter und schwerer Items.</span>
+<span id="cb12-531"><a href="#cb12-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-532"><a href="#cb12-532" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb12-533"><a href="#cb12-533" aria-hidden="true" tabindex="-1"></a><span class="fu">## Kleine Stichprobe</span></span>
+<span id="cb12-534"><a href="#cb12-534" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-535"><a href="#cb12-535" aria-hidden="true" tabindex="-1"></a>Bei $N = 60$ und 12 Items sind die CML-Schätzungen mit breiten</span>
+<span id="cb12-536"><a href="#cb12-536" aria-hidden="true" tabindex="-1"></a>Konfidenzintervallen behaftet. Zudem mussten **zwei Personen mit perfektem</span>
+<span id="cb12-537"><a href="#cb12-537" aria-hidden="true" tabindex="-1"></a>Score** (alle 12 Items bejaht) vor der Schätzung entfernt werden, da extreme</span>
+<span id="cb12-538"><a href="#cb12-538" aria-hidden="true" tabindex="-1"></a>Rohwerte keine endlichen Personenparameter liefern; das Rasch-Modell beruht</span>
+<span id="cb12-539"><a href="#cb12-539" aria-hidden="true" tabindex="-1"></a>damit auf 58 Personen. Für robustere Aussagen lassen sich nichtparametrische</span>
+<span id="cb12-540"><a href="#cb12-540" aria-hidden="true" tabindex="-1"></a>Tests heranziehen (<span class="in">`eRm::NPtest()`</span>), die ohne asymptotische Annahmen auskommen.</span>
+<span id="cb12-541"><a href="#cb12-541" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb12-542"><a href="#cb12-542" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-543"><a href="#cb12-543" aria-hidden="true" tabindex="-1"></a>Die Bewertung folgt den Zielkriterien aus dem Analyseplan. Eine **gelungene**</span>
-<span id="cb12-544"><a href="#cb12-544" aria-hidden="true" tabindex="-1"></a>Kurzform läge vor, wenn:</span>
-<span id="cb12-545"><a href="#cb12-545" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-546"><a href="#cb12-546" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>die interne Konsistenz ($\alpha$, $\omega$, Split-Half) $\geq .70$ erreicht,</span>
-<span id="cb12-547"><a href="#cb12-547" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>die Summenscores von Kurz- und Langform hoch korrelieren <span class="co">[</span><span class="ot">@smith2000sins</span><span class="co">]</span>,</span>
-<span id="cb12-548"><a href="#cb12-548" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>das Sechs-Faktoren-CFA-Modell akzeptabel passt (CFI $&gt; .95$, RMSEA $&lt; .06$) und</span>
-<span id="cb12-549"><a href="#cb12-549" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>die Items das Rasch-Modell erfüllen (Item-Fit, Separationsreliabilität).</span>
-<span id="cb12-550"><a href="#cb12-550" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-551"><a href="#cb12-551" aria-hidden="true" tabindex="-1"></a>Werden diese Kriterien erfüllt, bildet die GEB-12 die Umwelteinstellung</span>
-<span id="cb12-552"><a href="#cb12-552" aria-hidden="true" tabindex="-1"></a>**reliabel und valide** ab und lässt sich ökonomisch in Kurzerhebungen</span>
-<span id="cb12-553"><a href="#cb12-553" aria-hidden="true" tabindex="-1"></a>einsetzen. Verfehlt die Kurzform einzelne Kriterien – etwa eine zu niedrige</span>
-<span id="cb12-554"><a href="#cb12-554" aria-hidden="true" tabindex="-1"></a>Reliabilität als unvermeidliche Folge der starken Itemreduktion oder einen</span>
-<span id="cb12-555"><a href="#cb12-555" aria-hidden="true" tabindex="-1"></a>schwachen CFA-Fit aufgrund der kleinen Stichprobe –, wären gezielte</span>
-<span id="cb12-556"><a href="#cb12-556" aria-hidden="true" tabindex="-1"></a>Itemrevisionen oder eine größere Folgeerhebung die nächsten Schritte.</span>
-<span id="cb12-557"><a href="#cb12-557" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-558"><a href="#cb12-558" aria-hidden="true" tabindex="-1"></a><span class="fu">## Einschränkungen</span></span>
-<span id="cb12-559"><a href="#cb12-559" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-560"><a href="#cb12-560" aria-hidden="true" tabindex="-1"></a>Die wichtigste Einschränkung ist der **Stichprobenumfang** ($N \approx 50$).</span>
-<span id="cb12-561"><a href="#cb12-561" aria-hidden="true" tabindex="-1"></a>Er erlaubt orientierende KTT-Kennwerte, ist für CFA und IRT mit 12 dichotomen</span>
-<span id="cb12-562"><a href="#cb12-562" aria-hidden="true" tabindex="-1"></a>Items aber klein; die Fit- und Itemparameter sind entsprechend unsicher. Aus</span>
-<span id="cb12-563"><a href="#cb12-563" aria-hidden="true" tabindex="-1"></a>demselben Grund konnte der vorgeschaltete Pretest mit $N = 6$ nur die</span>
-<span id="cb12-564"><a href="#cb12-564" aria-hidden="true" tabindex="-1"></a>Verständlichkeit und Durchführbarkeit absichern und keine belastbare</span>
-<span id="cb12-565"><a href="#cb12-565" aria-hidden="true" tabindex="-1"></a>Itemselektion leisten (siehe @sec-pretest). Die Ergebnisse sind daher als</span>
-<span id="cb12-566"><a href="#cb12-566" aria-hidden="true" tabindex="-1"></a>**Machbarkeitsnachweis** der theoriegeleiteten Kurzform zu verstehen, nicht als</span>
-<span id="cb12-567"><a href="#cb12-567" aria-hidden="true" tabindex="-1"></a>abschließende Validierung.</span>
-<span id="cb12-568"><a href="#cb12-568" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-569"><a href="#cb12-569" aria-hidden="true" tabindex="-1"></a><span class="fu"># Literatur</span></span>
-<span id="cb12-570"><a href="#cb12-570" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-571"><a href="#cb12-571" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb12-572"><a href="#cb12-572" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-543"><a href="#cb12-543" aria-hidden="true" tabindex="-1"></a><span class="fu"># Diskussion</span></span>
+<span id="cb12-544"><a href="#cb12-544" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-545"><a href="#cb12-545" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ist die GEB-12 eine gute Kurzform?</span></span>
+<span id="cb12-546"><a href="#cb12-546" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-547"><a href="#cb12-547" aria-hidden="true" tabindex="-1"></a>Die Bewertung folgt den Zielkriterien aus dem Analyseplan. Eine **gelungene**</span>
+<span id="cb12-548"><a href="#cb12-548" aria-hidden="true" tabindex="-1"></a>Kurzform läge vor, wenn:</span>
+<span id="cb12-549"><a href="#cb12-549" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-550"><a href="#cb12-550" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>die interne Konsistenz ($\alpha$, $\omega$, Split-Half) $\geq .70$ erreicht,</span>
+<span id="cb12-551"><a href="#cb12-551" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>die Summenscores von Kurz- und Langform hoch korrelieren <span class="co">[</span><span class="ot">@smith2000sins</span><span class="co">]</span>,</span>
+<span id="cb12-552"><a href="#cb12-552" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>das Sechs-Faktoren-CFA-Modell akzeptabel passt (CFI $&gt; .95$, RMSEA $&lt; .06$) und</span>
+<span id="cb12-553"><a href="#cb12-553" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>die Items das Rasch-Modell erfüllen (Item-Fit, Separationsreliabilität).</span>
+<span id="cb12-554"><a href="#cb12-554" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-555"><a href="#cb12-555" aria-hidden="true" tabindex="-1"></a>Werden diese Kriterien erfüllt, bildet die GEB-12 die Umwelteinstellung</span>
+<span id="cb12-556"><a href="#cb12-556" aria-hidden="true" tabindex="-1"></a>**reliabel und valide** ab und lässt sich ökonomisch in Kurzerhebungen</span>
+<span id="cb12-557"><a href="#cb12-557" aria-hidden="true" tabindex="-1"></a>einsetzen. Verfehlt die Kurzform einzelne Kriterien – etwa eine zu niedrige</span>
+<span id="cb12-558"><a href="#cb12-558" aria-hidden="true" tabindex="-1"></a>Reliabilität als unvermeidliche Folge der starken Itemreduktion oder einen</span>
+<span id="cb12-559"><a href="#cb12-559" aria-hidden="true" tabindex="-1"></a>schwachen CFA-Fit aufgrund der kleinen Stichprobe –, wären gezielte</span>
+<span id="cb12-560"><a href="#cb12-560" aria-hidden="true" tabindex="-1"></a>Itemrevisionen oder eine größere Folgeerhebung die nächsten Schritte.</span>
+<span id="cb12-561"><a href="#cb12-561" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-562"><a href="#cb12-562" aria-hidden="true" tabindex="-1"></a><span class="fu">## Einschränkungen</span></span>
+<span id="cb12-563"><a href="#cb12-563" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-564"><a href="#cb12-564" aria-hidden="true" tabindex="-1"></a>Die wichtigste Einschränkung ist der **Stichprobenumfang** ($N = 60$).</span>
+<span id="cb12-565"><a href="#cb12-565" aria-hidden="true" tabindex="-1"></a>Er erlaubt orientierende KTT-Kennwerte, ist für CFA und IRT mit 12 dichotomen</span>
+<span id="cb12-566"><a href="#cb12-566" aria-hidden="true" tabindex="-1"></a>Items aber klein; die Fit- und Itemparameter sind entsprechend unsicher. Aus</span>
+<span id="cb12-567"><a href="#cb12-567" aria-hidden="true" tabindex="-1"></a>demselben Grund konnte der vorgeschaltete Pretest mit $N = 6$ nur die</span>
+<span id="cb12-568"><a href="#cb12-568" aria-hidden="true" tabindex="-1"></a>Verständlichkeit und Durchführbarkeit absichern und keine belastbare</span>
+<span id="cb12-569"><a href="#cb12-569" aria-hidden="true" tabindex="-1"></a>Itemselektion leisten (siehe @sec-pretest). Die Ergebnisse sind daher als</span>
+<span id="cb12-570"><a href="#cb12-570" aria-hidden="true" tabindex="-1"></a>**Machbarkeitsnachweis** der theoriegeleiteten Kurzform zu verstehen, nicht als</span>
+<span id="cb12-571"><a href="#cb12-571" aria-hidden="true" tabindex="-1"></a>abschließende Validierung.</span>
+<span id="cb12-572"><a href="#cb12-572" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-573"><a href="#cb12-573" aria-hidden="true" tabindex="-1"></a><span class="fu"># Literatur</span></span>
+<span id="cb12-574"><a href="#cb12-574" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-575"><a href="#cb12-575" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb12-576"><a href="#cb12-576" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
